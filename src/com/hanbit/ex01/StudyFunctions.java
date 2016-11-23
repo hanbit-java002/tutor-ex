@@ -11,10 +11,10 @@ public class StudyFunctions {
 		//   ex: month = 1 -> January
 		//   ex: month = 2 -> February
 		int month = 5;
-		printMonthNameUsingIf(month);
-		printMonthNameUsingArray(month);
+		printMonthName(month);
 		
-		// 3. 변수로 받는 년, 월에 따라 영문 월명과 해당 년월의 날짜 수를 출력하세요.
+		// 3. 변수로 받는 년, 월에 따라 영문 월명과
+		//    해당 년월의 날짜 수를 출력하세요.
 		//   출력예: 2016년 5월 : May (31일)
 		int year = 2016;
 		printMonthNameAndDays(year, month);
@@ -28,17 +28,23 @@ public class StudyFunctions {
 		// 출력형식에 맞추어 출력한다.
 		
 	}
+	
+	private static void printMonthName(int month) {
+		String monthName = getMonthNameUsingArray(month);
+		
+		System.out.println(monthName);
+	}
 
-	static String printMonthNameUsingArray(int month) {
+	static String getMonthNameUsingArray(int month) {
 		String[] monthNames = new String[] {
 				"January", "February", "March", "April", "May", "June",
 				"July", "August", "September", "October", "November", "December"
 		};
 		
-		return printKeyAndValue(month + "월", monthNames[month - 1]);
+		return getKeyAndValue(month + "월", monthNames[month - 1]);
 	}
 
-	static String printMonthNameUsingIf(int month) {
+	static String getMonthNameUsingIf(int month) {
 		String monthName = "";
 		
 		if (month == 1) {
@@ -78,15 +84,12 @@ public class StudyFunctions {
 			monthName = "December";
 		}
 		
-		return printKeyAndValue(month + "월", monthName);
+		return getKeyAndValue(month + "월", monthName);
 	}
 
-	static String printKeyAndValue(String key, String value) {
-		String keyAndValue = key + " : " + value; 
+	static String getKeyAndValue(String key, String value) {
 		
-		System.out.println(keyAndValue);
-		
-		return keyAndValue;
+		return key + " : " + value; 
 	}
 	
 	static void printString(String string) {
