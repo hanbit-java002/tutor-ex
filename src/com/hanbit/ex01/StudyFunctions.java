@@ -10,7 +10,7 @@ public class StudyFunctions {
 		// 2. 변수로 받은 월에 따라 영문 월명을 출력하세요.
 		//   ex: month = 1 -> January
 		//   ex: month = 2 -> February
-		int month = 2;
+		int month = 1;
 		printMonthName(month);
 		
 		// 3. 변수로 받는 년, 월에 따라 영문 월명과
@@ -25,6 +25,24 @@ public class StudyFunctions {
 		//   출력예: 2016년 1월 : January
 		//   출력예: 2016년 2월 : May (29일)
 		printMonthNameAndDays2(year, month);
+	}
+	
+	static void printMonthNameAndDays2(int year, int month) {
+		// 월의 영문 월명을 구한다.
+		String monthName = getMonthNameUsingIf(month);
+		// 년 월의 날짜 수를 구한다.
+		int days = getDaysOfMonth(year, month);
+		// 출력형식에 맞추어 출력한다.
+		// (단, 날짜 수가 31일이 아닐 경우에만 날짜 수를 출력하세요.)
+		String yearAndMonthName = year + "년 " + monthName;
+		
+		System.out.print(yearAndMonthName);
+		
+		if (days != 31) {
+			System.out.print(" (" + days + "일)");
+		}
+		
+		System.out.println();
 	}
 	
 	static void printMonthNameAndDays(int year, int month) {
