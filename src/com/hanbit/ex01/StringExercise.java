@@ -31,8 +31,29 @@ public class StringExercise {
 		else {
 			System.out.println("유효하지 않은 스트링");
 		}
+		
+		String hanbit = "aBc";
+		
+		if (!"ABc".equalsIgnoreCase(hanbit)) {
+			System.out.println("다릅니다.");
+		}
+		else {
+			System.out.println("같습니다.");
+		}
 	}
 	
+	static boolean validateStringLength(String str, int minLength, int maxLength) {
+		
+		// 문자열의 길이를 구한다.
+		int stringLength = str.length();
+		
+		if (stringLength >= minLength && stringLength <= maxLength) {
+			return true;
+		}
+
+		return false;
+	}
+
 	static boolean isShorterThan10(String str) {
 		
 		return getLengthOfString(str) < 10;
