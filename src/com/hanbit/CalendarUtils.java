@@ -6,7 +6,7 @@ public class CalendarUtils {
 	
 		// 해당 년월의 날짜 수를 출력하세요.
 		int year = 2016;
-		int month = 7;
+		int month = 11;
 		System.out.println(getDaysOfMonth(year, month));
 		
 		// 해당 년의 총 날짜 수를 출력하세요.
