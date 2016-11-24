@@ -1,5 +1,7 @@
 package com.hanbit.ex01;
 
+import java.util.Arrays;
+
 public class ForAndArray {
 
 	public static void main(String[] args) {
@@ -21,7 +23,7 @@ public class ForAndArray {
 		
 		// 2. 주어진 배열의 부분 배열을 반환하는 함수를 작성하세요.
 		int[] numbers = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-		int startIndex = 2;	// 시작인덱스
+		int startIndex = 8;	// 시작인덱스
 		int length = 4;		// 부분 배열의 길이
 		int[] subNumbers = getSubArray(numbers, startIndex, length);
 		
@@ -34,6 +36,26 @@ public class ForAndArray {
 			System.out.print(subNumbers[i]);
 		}
 		System.out.println("]");
+		
+		// 3. AB형이 아닌 혈액형만 출력하세요.
+		String[] bloodTypes = new String[] {"A", "B", "AB", "O"};
+		printPureBloodType(bloodTypes);
+	}
+	
+	static int[] getSubArray(int[] array, int startIndex, int length) {
+		int[] subArray = new int[length];
+		
+		for (int i=0;i<length;i++) {
+			int index = startIndex + i;
+			
+			if (index >= array.length) {
+				break;
+			}
+			
+			subArray[i] = array[index];
+		}
+		
+		return subArray;
 	}
 
 	static String[] getMonthNames(int startMonth) {
