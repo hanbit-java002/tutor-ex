@@ -18,8 +18,35 @@ public class ArrayExercise {
 		// 3. 월명이 5자 이하인 월명을 배열로 만들어 반환하세요.
 		String[] shortMonthNames = getShortMonthNames(monthNames);
 		printArray(shortMonthNames);
+
+		// 4. 월명이 5자 이하이면 월명을 배열에 넣고
+		//    6자 이상이면 "Long" 문자열을 넣어서 배열을 반환하세요.
+		shortMonthNames = getShortMonthNamesOrLong(monthNames);
+		printArray(shortMonthNames);
 	}
 	
+	static String[] getShortMonthNames(String[] monthNames) {
+		int countOfShortMonthName = 0;
+		
+		for (int i=0;i<monthNames.length;i++) {
+			if (monthNames[i].length() <= 5) {
+				countOfShortMonthName++;
+			}
+		}
+		
+		String[] shortMonthNames = new String[countOfShortMonthName];
+		
+		int s = 0;
+		
+		for (int i=0;i<monthNames.length;i++) {
+			if (monthNames[i].length() <= 5) {
+				shortMonthNames[s++] = monthNames[i];
+			}
+		}
+		
+		return shortMonthNames;
+	}
+
 	static int[] countMonthNamesLength(String[] monthNames) {
 		int[] monthNamesLength = new int[monthNames.length];
 		
