@@ -12,6 +12,22 @@ public class ForAndArray {
 		for (String monthName : monthNames) {
 			System.out.println(monthName);
 		}
+		
+		for (int i=0;i<monthNames.length;i++) {
+			String monthName = monthNames[i];
+			
+			System.out.println(monthName);
+		}
+	}
+
+	static String[] getMonthNames(int startMonth) {
+		String[] monthNames = new String[12 - startMonth + 1];
+		
+		for (int m=startMonth, i=0; m<=12; m++, i++) {
+			monthNames[i] = m + "월";
+		}
+		
+		return monthNames;
 	}
 	
 }
