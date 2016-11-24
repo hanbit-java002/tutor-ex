@@ -42,6 +42,15 @@ public class ForAndArray {
 		printPureBloodType(bloodTypes);
 	}
 	
+	static void printPureBloodType(String[] bloodTypes) {
+		for (int i=0;i<bloodTypes.length;i++) {
+			if (!"AB".equals(bloodTypes[i])) {
+			//if (!bloodTypes[i].equals("AB")) {	// anti-pattern
+				System.out.println(bloodTypes[i]);
+			}
+		}
+	}
+
 	static int[] getSubArray(int[] array, int startIndex, int length) {
 		int[] subArray = new int[length];
 		
