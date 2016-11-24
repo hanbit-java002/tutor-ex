@@ -14,8 +14,22 @@ public class ArrayExercise {
 		//  hint: int lengthOfString = "March".length();
 		int[] monthNamesLength = countMonthNamesLength(monthNames);
 		printArray(monthNamesLength);
+
+		// 3. 월명이 5자 이하인 월명을 배열로 만들어 반환하세요.
+		String[] shortMonthNames = getShortMonthNames(monthNames);
+		printArray(shortMonthNames);
 	}
 	
+	static int[] countMonthNamesLength(String[] monthNames) {
+		int[] monthNamesLength = new int[monthNames.length];
+		
+		for (int i=0;i<monthNamesLength.length;i++) {
+			monthNamesLength[i] = monthNames[i].length();
+		}
+		
+		return monthNamesLength;
+	}
+
 	static String[] createMonthNameArray() {
 		String[] monthNames = new String[12];
 		
