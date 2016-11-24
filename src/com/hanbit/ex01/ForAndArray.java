@@ -40,6 +40,12 @@ public class ForAndArray {
 		// 3. AB형이 아닌 혈액형만 출력하세요.
 		String[] bloodTypes = new String[] {"A", "B", "AB", "O"};
 		printPureBloodType(bloodTypes);
+		
+		// 4. 배열의 길이와 첫번째 숫자를 입력받아
+		//    1씩 증가하는 숫자로 채워진 배열을 반환하세요.
+		int arrayLength = 10;
+		int firstNumber = 7;
+		int[] numberArray = createArray(arrayLength, firstNumber);
 	}
 	
 	static void printPureBloodType(String[] bloodTypes) {
