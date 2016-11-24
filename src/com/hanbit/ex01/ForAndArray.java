@@ -9,6 +9,9 @@ public class ForAndArray {
 		int startMonth = 3;
 		String[] monthNames = getMonthNames(startMonth);
 		
+		for (String monthName : monthNames) {
+			System.out.println(monthName);
+		}
 	}
 	
 }
