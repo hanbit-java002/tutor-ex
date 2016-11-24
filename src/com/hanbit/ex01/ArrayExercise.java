@@ -25,6 +25,21 @@ public class ArrayExercise {
 		printArray(shortMonthNames);
 	}
 	
+	static String[] getShortMonthNamesOrLong(String[] monthNames) {
+		String[] shortMonthNames = new String[monthNames.length];
+		
+		for (int i=0;i<monthNames.length;i++) {
+			if (monthNames[i].length() <= 5) {
+				shortMonthNames[i] = monthNames[i];
+			}
+			else {
+				shortMonthNames[i] = "Long";
+			}
+		}
+		
+		return shortMonthNames;
+	}
+
 	static String[] getShortMonthNames(String[] monthNames) {
 		int countOfShortMonthName = 0;
 		
