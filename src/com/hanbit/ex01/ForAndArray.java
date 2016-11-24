@@ -46,8 +46,28 @@ public class ForAndArray {
 		int arrayLength = 10;
 		int firstNumber = 7;
 		int[] numberArray = createArray(arrayLength, firstNumber);
+		
+		System.out.print("[");
+		for (int i=0;i<numberArray.length;i++) {
+			if (i > 0) {
+				System.out.print(", ");
+			}
+			
+			System.out.print(numberArray[i]);
+		}
+		System.out.println("]");
 	}
 	
+	static int[] createArray(int arrayLength, int firstNumber) {
+		int[] array = new int[arrayLength];
+		
+		for (int i=0;i<arrayLength;i++) {
+			array[i] = firstNumber + i;
+		}
+
+		return array;
+	}
+
 	static void printPureBloodType(String[] bloodTypes) {
 		for (int i=0;i<bloodTypes.length;i++) {
 			if (!"AB".equals(bloodTypes[i])) {
