@@ -27,11 +27,20 @@ public class ForExercise {
 		
 	}
 
+	static int getSumComplex(int from, int to) {
+		if ((from + to) % 2 != 0) {
+			return getSum(from, to);
+		}
+		else {
+			return to;
+		}
+	}
+
 	static int getSumOnlyEven(int from, int to) {
 		int sum = 0;
 		
 		for (int i=from;i<=to;i++) {
-			if (i % 2 == 0) {
+			if (i % 2 != 0) {
 				sum += i;
 			}
 		}
