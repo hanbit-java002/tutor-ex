@@ -12,7 +12,19 @@ public class StringChecker {
 	 * 예1: hasNumber("hello123") -> true
 	 * 예2: hasNumber("박재홍") -> false
 	 */
-	
-	
+	static boolean hasNumber(String str) {
+		char[] chars = str.toCharArray();
+		
+		for (int i=0;i<chars.length;i++) {
+			if (chars[i] == '0' || chars[i] == '1' || chars[i] == '2'
+					|| chars[i] == '3' || chars[i] == '4' || chars[i] == '5' 
+					|| chars[i] == '6' || chars[i] == '7' || chars[i] == '8' 
+					|| chars[i] == '9') {
+				return true;
+			}
+		}
+		
+		return false;
+	}
 	
 }
