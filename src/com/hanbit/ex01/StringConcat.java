@@ -85,6 +85,31 @@ public class StringConcat {
 	 *       단, 합쳐진 문자열이 "이상윤" 이면 더이상 합치지 않고 반환합니다.
 	 * 예: concatUntilLSY(new String[] {"이", "상", "윤", "#", "*"}) -> "이상윤"
 	 */
+	static String concatUntilLSY(String[] strings) {
+		String result = "";
+		
+		for (int i=0;i<strings.length;i++) {
+			result = concat(result , strings[i]);
+
+			if ("이상윤".equals(result)) {
+				break;
+			}
+		}
+		
+		return result;
+	}
+	
+	/*
+	 * 함수명: concatExcludeSpecialCharacterUntilPlus
+	 * 매개변수: String[] strings
+	 * 리턴타입: String
+	 * 설명: 입력받은 문자열 배열의 특수문자를 제외한 
+	 *       모든 문자열을 합쳐서 반환합니다.
+	 *       단, 문자열이 "+" 이면 더이상 합치지 않고 반환합니다.
+	 * 예: concat(new String[] {"이", "$", "상", "#", "+", "윤"}) -> "이상"
+	 * 제약사항: 특수문자는 !, @, #, $, % 만 체크합니다.
+	 */
+	
 	
 	
 	
