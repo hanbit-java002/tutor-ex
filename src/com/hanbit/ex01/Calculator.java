@@ -4,25 +4,32 @@ public class Calculator {
 	
 	public static void main(String[] args) {
 		
-		int number1 = 10;
-		int number2 = 6;
+	}
+	
+	// 함수명: calculate
+	// 매개변수1: int x
+	// 매개변수2: int y
+	// 매개변수3: String operator ("+", "-", "*", "/", "%")
+	// 리턴타입: int
+	// 예: calculate(3, 4, "*") -> 12
+	static int calculate(int x, int y, String operator) {
+		if ("+".equals(operator)) {
+			return sum(x, y);
+		}
+		else if ("-".equals(operator)) {
+			return subtract(x, y);
+		}
+		else if ("*".equals(operator)) {
+			return multiply(x, y);
+		}
+		else if ("/".equals(operator)) {
+			return divide(x, y);
+		}
+		else if ("%".equals(operator)) {
+			return remain(x, y);
+		}
 		
-		// 주어진 변수 2개를 사용하여 작성한 각 함수를 호출하고
-		// 결과를 출력하세요.
-		System.out.println(sum(number1, number2));
-		System.out.println(subtract(number1, number2));
-		System.out.println(multiply(number1, number2));
-		System.out.println(divide(number1, number2));
-		System.out.println(remain(number1, number2));
-		
-		System.out.println("-----------------");
-		
-		System.out.println(sum(number1, number2));
-		System.out.println("sum(number1, number2)");
-		
-		System.out.println("-----------------");
-		
-		System.out.println(sum(number1, sum(number2, number1)));
+		return 0;
 	}
 
 	// sum(더하기), subtract(빼기), multiply(곱하기)
