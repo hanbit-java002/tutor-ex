@@ -92,16 +92,84 @@ public class FunctionExercise {
 		return null;
 	}
 	
+	/*
+	 * 함수명: equal
+	 * 매개변수1: Object obj
+	 * 리턴타입: boolean
+	 */
+	static boolean equal(Object obj) {
+		
+		return false;
+	}
 	
+	/*
+	 * 함수명: cloneObj
+	 * 리턴타입: Object
+	 */
+	static Object cloneObj() {
+		
+		return null;
+	}
 	
+	/*
+	 * 함수명: decode
+	 * 매개변수1: String number
+	 * 리턴타입: Integer
+	 */
+	static Integer decode(String number) {
+		
+		/* Primitive Type vs Wrapper Class Type
+		byte Byte
+		short Short
+		int Integer
+		long Long
+		
+		float Float
+		double Double
+		boolean Boolean
+		char Character
+		*/
+		
+		return null;
+	}
 	
+	/*
+	 * 함수명: search
+	 * 매개변수1: double[] array
+	 * 매개변수2: int fromIndex
+	 * 매개변수3: int toIndex
+	 * 매개변수4: double key
+	 * 리턴타입: int	
+	 */
+	static int search(double[] array, int fromIndex, int toIndex, double key) {
+		
+		return 0;
+	}
 	
+	/*
+	 * 함수명이 getHashTags 이고 String 배열을 반환하는
+	 * 함수의 원형을 작성하세요.
+	 */
+	static String[] getHashTags() {
+		
+		return null;
+	}
 	
+	/*
+	 * 함수명이 plus 이고 두개의 정수를 입력받아
+	 * 정수형태의 값을 리턴하는 함수의 원형을 작성하세요.
+	 */
+	static int plus(int x, int y) {
+		
+		return 0;
+	}
 	
-	
-	
-	
-	
+	/*
+	 * 함수명이 println인 함수를 작성하세요.
+	 */
+	static void println(String str) {
+		
+	}
 	
 	
 	
