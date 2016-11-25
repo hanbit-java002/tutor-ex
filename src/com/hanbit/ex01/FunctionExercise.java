@@ -4,6 +4,33 @@ public class FunctionExercise {
 
 	public static void main(String[] args) {
 		
+		String firstName = "지훈";
+		String lastName = "한";
+		String fullName = getFullName(firstName, lastName);
+		
+		String names = "조영욱|김지룡";
+		String[] nameArray = splitNames(names, "|");
+		
+		// 세 수의 합을 함수 1개를 호출하여 구하시오.
+		int x = 1, y = 2, z = 3;
+		int sum = plusThreeNumbers(x, y, z);
+		sum = plus(x + y, z);
+		sum = plus(x, y + z);
+		
+		// 세 수의 합을 함수 2개를 호출하여 구하시오.
+		sum = plus(plus(x, y), z);
+		
+		boolean bigger = false;
+		setBigger(bigger);
+		setBigger(true);
+		setBigger(1 < 4);
+		setBigger(x > y);
+		
+		setBigger(plus(x, y) > 4);
+	}
+	
+	static void setBigger(boolean bigger) {
+		
 	}
 	
 	/*
