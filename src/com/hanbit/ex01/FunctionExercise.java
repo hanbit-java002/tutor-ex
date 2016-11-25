@@ -87,7 +87,7 @@ public class FunctionExercise {
 	 * 매개변수2: String separator
 	 * 리턴타입: String[]
 	 */
-	static String[] splitnames(String names, String separator) {
+	static String[] splitNames(String names, String separator) {
 		
 		return null;
 	}
