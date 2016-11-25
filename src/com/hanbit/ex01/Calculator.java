@@ -42,7 +42,23 @@ public class Calculator {
 	// 설명: 두개의 정수를 첫번째 연산자와 세번째 연산자로 계산한 후
 	//       각 결과를 두번째 연산자로 계산하여 결과를 반환합니다.
 	// 예: calculateMore(3, 4, "*", "+", "-") -> 11
-	
+	static int calculateMore(int x, int y,
+			String operator1, String operator2, String operator3) {
+		
+		int result1 = calculate(x, y, operator1);
+		int result2 = calculate(x, y, operator3);
+		
+		return calculate(result1, result2, operator2);
+	}
+
+	// 함수명: calculateMore
+	// 매개변수1: int x
+	// 매개변수2: int y
+	// 매개변수3: String[] operators ("+", "-", "*", "/", "%")
+	// 리턴타입: int
+	// 설명: 두개의 정수를 첫번째 연산자와 세번째 연산자로 계산한 후
+	//       각 결과를 두번째 연산자로 계산하여 결과를 반환합니다.
+	// 예: calculateMore(3, 4, new String[] {"*", "+", "-"}) -> 11
 	
 	
 
