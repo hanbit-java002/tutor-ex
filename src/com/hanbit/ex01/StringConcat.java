@@ -24,6 +24,30 @@ public class StringConcat {
 	 * 설명: 입력받은 문자열 배열의 모든 문자열을 합쳐서 반환합니다.
 	 * 예: concat(new String[] {"이", "상", "윤"}) -> "이상윤"
 	 */
+	static String concat(String[] strings) {
+		String result = "";
+		
+		for (int i=0;i<strings.length;i++) {
+			result = concat(result , strings[i]);
+		}
+		
+		return result;
+	}
+	
+	/*
+	 * 함수명: checkSpecialCharacter
+	 * 매개변수: String str
+	 * 리턴타입: boolean
+	 * 설명: 입력받은 문자열이 특수문자이면 true를 리턴한다.
+	 * 예: checkSpecialCharacter("#") -> true
+	 * 제약사항: 특수문자는 !, @, #, $, % 만 체크합니다.
+	 */
+	
+	
+	
+	
+	
+	
 	
 	
 	
