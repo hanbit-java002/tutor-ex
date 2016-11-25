@@ -16,4 +16,20 @@ public class StringConcat {
 		
 		return str1 + str2;
 	}
+	
+	/*
+	 * 함수명: concat
+	 * 매개변수: String[] strings
+	 * 리턴타입: String
+	 * 설명: 입력받은 문자열 배열의 모든 문자열을 합쳐서 반환합니다.
+	 * 예: concat(new String[] {"이", "상", "윤"}) -> "이상윤"
+	 */
+	
+	
+	
+	
+	
+	
+	
+	
 }
