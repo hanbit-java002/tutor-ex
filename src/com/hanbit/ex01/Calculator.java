@@ -59,7 +59,10 @@ public class Calculator {
 	// 설명: 두개의 정수를 첫번째 연산자와 세번째 연산자로 계산한 후
 	//       각 결과를 두번째 연산자로 계산하여 결과를 반환합니다.
 	// 예: calculateMore(3, 4, new String[] {"*", "+", "-"}) -> 11
-	
+	static int calculateMore(int x, int y, String[] operators) {
+		
+		return calculateMore(x, y, operators[0], operators[1], operators[2]);
+	}
 	
 
 	// sum(더하기), subtract(빼기), multiply(곱하기)
