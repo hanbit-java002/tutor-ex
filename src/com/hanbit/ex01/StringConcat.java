@@ -109,7 +109,21 @@ public class StringConcat {
 	 * 예: concat(new String[] {"이", "$", "상", "#", "+", "윤"}) -> "이상"
 	 * 제약사항: 특수문자는 !, @, #, $, % 만 체크합니다.
 	 */
-	
+	static String concatExcludeSpecialCharacterUntilPlus(String[] strings) {
+		String result = "";
+		
+		for (int i=0;i<strings.length;i++) {
+			if ("+".equals(strings[i])) {
+				break;
+			}
+			
+			if (!checkSpecialCharacter(strings[i])) {
+				result = concat(result , strings[i]);
+			}
+		}
+		
+		return result;
+	}
 	
 	
 	
