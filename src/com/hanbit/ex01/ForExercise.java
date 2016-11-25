@@ -40,7 +40,7 @@ public class ForExercise {
 		int sum = 0;
 		
 		for (int i=from;i<=to;i++) {
-			if (i % 2 != 0) {
+			if (i % 2 == 0) {
 				sum += i;
 			}
 		}
