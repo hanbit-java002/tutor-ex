@@ -33,6 +33,20 @@ public class StringConcat {
 		
 		return result;
 	}
+
+	/*
+	 * 함수명: concatExcludeSpecialCharacter
+	 * 매개변수: String[] strings
+	 * 리턴타입: String
+	 * 설명: 입력받은 문자열 배열의 특수문자를 제외한 
+	 *       모든 문자열을 합쳐서 반환합니다.
+	 * 예: concat(new String[] {"이", "$", "상", "#", "*", "윤"}) -> "이상*윤"
+	 * 제약사항: 특수문자는 !, @, #, $, % 만 체크합니다.
+	 */
+	
+	
+	
+	
 	
 	/*
 	 * 함수명: checkSpecialCharacter
@@ -42,7 +56,14 @@ public class StringConcat {
 	 * 예: checkSpecialCharacter("#") -> true
 	 * 제약사항: 특수문자는 !, @, #, $, % 만 체크합니다.
 	 */
-	
+	static boolean checkSpecialCharacter(String str) {
+		if ("!".equals(str) || "@".equals(str) || "#".equals(str)
+				|| "$".equals(str) || "%".equals(str)) {
+			return true;
+		}
+		
+		return false;
+	}
 	
 	
 	
