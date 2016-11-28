@@ -104,8 +104,15 @@ public class StringChecker {
 	 * 매개변수1: String str
 	 * 매개변수2: char ch
 	 * 리턴타입: int
+	 * 설명: 문자열과 문자 1개를 입력받아 해당 문자의 위치를 반환합니다.
+	 *       단, 해당 문자가 없으면 -1 을 반환합니다.
+	 * 예1: indexOf("hello", 'e') -> 1
+	 * 예2: indexOf("christmas", 'd') -> -1
 	 */
-	
+	static int indexOf(String str, char ch) {
+		
+		return 0;
+	}
 	
 	
 	
