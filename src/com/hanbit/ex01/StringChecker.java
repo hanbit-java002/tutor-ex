@@ -212,18 +212,4 @@ public class StringChecker {
 		return chars[index];
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
