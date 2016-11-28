@@ -1,6 +1,14 @@
 package com.hanbit.ex01;
 
 public class StringChecker {
+	
+	public static void main(String[] args) {
+		String message = "hello java";
+		
+		// 주어진 메세지에 'e' 가 포함되는지 여부를 출력하세요.
+		// 출력: e 가 있습니다. / e 가 없습니다.
+		
+	}
 
 	/*
 	 * 함수명: hasNumber
@@ -132,9 +140,26 @@ public class StringChecker {
 	 * 예2: charAt("hanbit", -1) -> 0
 	 * 예3: charAt("hanbit", 6) -> 0
 	 */
+	/**
+	 * 문자열과 정수를 입력받아 정수번째 문자를 반환합니다.
+	 * 단, 정수가 0보다 작거나 문자열의 길이와 같거나 크면 0을 반환합니다.
+	 * 
+	 * @param str 문자열
+	 * @param index 반환할 문자열 인덱스
+	 * @return 정수번째 문자
+	 */
 	static char charAt(String str, int index) {
+		if (index < 0) {
+			return 0;
+		}
 		
-		return 0;
+		char[] chars = str.toCharArray();
+		
+		if (index >= chars.length) {
+			return 0;
+		}
+		
+		return chars[index];
 	}
 	
 	
