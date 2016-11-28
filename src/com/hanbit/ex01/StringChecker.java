@@ -11,20 +11,45 @@ public class StringChecker {
 	 * 힌트2: if (chars[i] == '3') { ... }
 	 * 예1: hasNumber("hello123") -> true
 	 * 예2: hasNumber("박재홍") -> false
+	 * 예3: hasNumber("A1") -> true
 	 */
 	static boolean hasNumber(String str) {
 		char[] chars = str.toCharArray();
 		
 		for (int i=0;i<chars.length;i++) {
-			if (chars[i] == '0' || chars[i] == '1' || chars[i] == '2'
+			boolean isNumber = chars[i] == '0' || chars[i] == '1' || chars[i] == '2'
 					|| chars[i] == '3' || chars[i] == '4' || chars[i] == '5' 
 					|| chars[i] == '6' || chars[i] == '7' || chars[i] == '8' 
-					|| chars[i] == '9') {
+					|| chars[i] == '9'; 
+			
+			if (isNumber) {
 				return true;
 			}
 		}
 		
 		return false;
 	}
+	
+	/*
+	 * 함수명: hasChar
+	 * 매개변수1: String str
+	 * 매개변수2: char ch
+	 * 리턴타입: boolean
+	 */
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
