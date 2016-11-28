@@ -126,8 +126,16 @@ public class StringChecker {
 	 * 매개변수1: String str
 	 * 매개변수2: int index
 	 * 리턴타입 char
+	 * 설명: 문자열과 정수를 입력받아 정수번째 문자를 반환합니다.
+	 *       단, 정수가 0보다 작거나 문자열의 길이와 같거나 크면 0을 반환합니다.
+	 * 예1: charAt("hanbit", 3) -> 'b'
+	 * 예2: charAt("hanbit", -1) -> 0
+	 * 예3: charAt("hanbit", 6) -> 0
 	 */
-	
+	static char charAt(String str, int index) {
+		
+		return 0;
+	}
 	
 	
 	
