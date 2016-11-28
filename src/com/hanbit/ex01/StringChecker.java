@@ -99,6 +99,12 @@ public class StringChecker {
 		return count;
 	}
 	
+	/*
+	 * 함수명: indexOf
+	 * 매개변수1: String str
+	 * 매개변수2: char ch
+	 * 리턴타입: int
+	 */
 	
 	
 	
