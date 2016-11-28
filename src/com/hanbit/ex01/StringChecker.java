@@ -28,7 +28,10 @@ public class StringChecker {
 		// 주어진 메세지에 a 가 앞에서 몇번째, 뒤에서 몇번째인지 출력하세요.
 		// 출력: a 가 앞에서 n 번째, 뒤에서 m 번째에 있습니다.
 		message = "banana";
-		
+		index = indexOf(message, 'a');
+		int lastIndex = lastIndexOf(message, 'a');
+		System.out.println("a 가 앞에서 " + index + " 번째, 뒤에서 "
+				+ lastIndex + "번째에 있습니다.");
 	}
 
 	/*
