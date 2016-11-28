@@ -153,9 +153,9 @@ public class StringChecker {
 	 * 설명: 문자열과 문자 1개를 입력받아 해당 문자의 위치를
 	 *       뒤에서 부터 카운트하여 반환합니다.
 	 *       단, 해당 문자가 없으면 -1 을 반환합니다.
-	 * 예1: indexOf("hello", 'l') -> 3
-	 * 예2: indexOf("hello", 'o') -> 4
-	 * 예3: indexOf("christmas", 'd') -> -1
+	 * 예1: lastIndexOf("hello", 'l') -> 3
+	 * 예2: lastIndexOf("hello", 'o') -> 4
+	 * 예3: lastIndexOf("christmas", 'd') -> -1
 	 */
 	static int lastIndexOf(String str, char ch) {
 		
