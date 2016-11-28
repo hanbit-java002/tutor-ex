@@ -80,8 +80,16 @@ public class StringChecker {
 	 * 매개변수1: String str
 	 * 매개변수2: char ch
 	 * 리턴타입: int
+	 * 설명: 문자열과 문자 1개를 입력받아 문자열에 해당 문자가
+	 *       몇개 포함되어있는지를 반환합니다.
+	 * 예1: countChar("merry", 'r') -> 2
+	 * 예2: countChar("merry", 'e') -> 1
+	 * 예3: countChar("merry", 'Y') -> 0
 	 */
-	
+	static int countChar(String str, char ch) {
+		
+		return 0;
+	}
 	
 	
 	
