@@ -56,8 +56,15 @@ public class StringChecker {
 	 * 함수명: hasY
 	 * 매개변수: String str
 	 * 리턴타입: boolean
+	 * 설명: 문자열을 입력받아 'Y' 또는 'y'를 포함하고 있는지 여부를 반환합니다.
+	 * 예1: hasY("Yes") -> true
+	 * 예1: hasY("merry") -> true
+	 * 예3: hasY("no") -> false
 	 */
-	
+	static boolean hasY(String str) {
+		
+		return false;
+	}
 	
 	
 	
