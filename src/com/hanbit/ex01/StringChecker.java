@@ -62,9 +62,25 @@ public class StringChecker {
 	 * 예3: hasY("no") -> false
 	 */
 	static boolean hasY(String str) {
+		char[] chars = str.toCharArray();
+		
+		for (int i=0;i<chars.length;i++) {
+			boolean isY = chars[i] == 'Y' || chars[i] == 'y'; 
+			
+			if (isY) {
+				return true;
+			}
+		}
 		
 		return false;
 	}
+	
+	/*
+	 * 함수명: countChar
+	 * 매개변수1: String str
+	 * 매개변수2: char ch
+	 * 리턴타입: int
+	 */
 	
 	
 	
