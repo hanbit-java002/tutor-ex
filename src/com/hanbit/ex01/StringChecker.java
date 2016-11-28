@@ -24,6 +24,11 @@ public class StringChecker {
 		// 출력: ch 가 n 번째에 있습니다.
 		int index = indexOf(message, ch);
 		System.out.println(ch + " 가(이) " + index + " 번째에 있습니다.");
+		
+		// 주어진 메세지에 a 가 앞에서 몇번째, 뒤에서 몇번째인지 출력하세요.
+		// 출력: a 가 앞에서 n 번째, 뒤에서 m 번째에 있습니다.
+		message = "banana";
+		
 	}
 
 	/*
@@ -158,8 +163,15 @@ public class StringChecker {
 	 * 예3: lastIndexOf("christmas", 'd') -> -1
 	 */
 	static int lastIndexOf(String str, char ch) {
+		char[] chars = str.toCharArray();
 		
-		return 0;
+		for (int i=chars.length-1;i>=0;i--) {
+			if (chars[i] == ch) {
+				return i;
+			}
+		}
+		
+		return -1;
 	}
 	
 	
