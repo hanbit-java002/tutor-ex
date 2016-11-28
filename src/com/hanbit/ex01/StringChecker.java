@@ -87,8 +87,16 @@ public class StringChecker {
 	 * 예3: countChar("merry", 'Y') -> 0
 	 */
 	static int countChar(String str, char ch) {
+		char[] chars = str.toCharArray();
+		int count = 0;
 		
-		return 0;
+		for (int i=0;i<chars.length;i++) {
+			if (chars[i] == ch) {
+				count++;
+			}
+		}
+		
+		return count;
 	}
 	
 	
