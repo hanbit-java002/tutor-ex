@@ -4,10 +4,26 @@ public class StringChecker {
 	
 	public static void main(String[] args) {
 		String message = "hello java";
+		char ch = 'j';
 		
-		// 주어진 메세지에 'e' 가 포함되는지 여부를 출력하세요.
-		// 출력: e 가 있습니다. / e 가 없습니다.
+		// 주어진 메세지에 ch 가 포함되는지 여부를 출력하세요.
+		// 출력: ch 가 있습니다. / ch 가 없습니다.
+		if (hasChar(message, ch)) {
+			System.out.println(ch + " 가(이) 있습니다.");
+		}
+		else {
+			System.out.println(ch + " 가(이) 없습니다.");
+		}
 		
+		// 주어진 메세지에 ch 가 몇개 포함되어있는지 출력하세요.
+		// 출력: ch 가 n 개 있습니다.
+		int count = countChar(message, ch);		
+		System.out.println(ch + " 가(이) " + count + " 개 있습니다.");
+		
+		// 주어진 메세지에 ch 가 몇번째 문자인지 출력하세요.
+		// 출력: ch 가 n 번째에 있습니다.
+		int index = indexOf(message, ch);
+		System.out.println(ch + " 가(이) " + index + " 번째에 있습니다.");
 	}
 
 	/*
@@ -128,6 +144,16 @@ public class StringChecker {
 		
 		return -1;
 	}
+	
+	/*
+	 * 함수명: lastIndexOf
+	 * 매개변수1: String str
+	 * 매개변수2: char ch
+	 * 리턴타입: int
+	 */
+	
+	
+	
 	
 	/*
 	 * 함수명: charAt
