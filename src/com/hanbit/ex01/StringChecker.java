@@ -41,10 +41,22 @@ public class StringChecker {
 	 * 예2: hasNumber("박재홍", 'h') -> false
 	 */
 	static boolean hasChar(String str, char ch) {
+		char[] chars = str.toCharArray();
+		
+		for (int i=0;i<chars.length;i++) {
+			if (chars[i] == ch) {
+				return true;
+			}
+		}
 		
 		return false;
 	}
 	
+	/*
+	 * 함수명: hasY
+	 * 매개변수: String str
+	 * 리턴타입: boolean
+	 */
 	
 	
 	
