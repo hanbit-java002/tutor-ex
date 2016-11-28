@@ -110,9 +110,28 @@ public class StringChecker {
 	 * 예2: indexOf("christmas", 'd') -> -1
 	 */
 	static int indexOf(String str, char ch) {
+		char[] chars = str.toCharArray();
 		
-		return 0;
+		for (int i=0;i<chars.length;i++) {
+			if (chars[i] == ch) {
+				return i;
+			}
+		}
+		
+		return -1;
 	}
+	
+	/*
+	 * 함수명: charAt
+	 * 매개변수1: String str
+	 * 매개변수2: int index
+	 * 리턴타입 char
+	 */
+	
+	
+	
+	
+	
 	
 	
 	
