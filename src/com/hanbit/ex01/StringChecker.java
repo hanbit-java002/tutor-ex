@@ -35,7 +35,15 @@ public class StringChecker {
 	 * 매개변수1: String str
 	 * 매개변수2: char ch
 	 * 리턴타입: boolean
+	 * 설명: 문자열과 문자 1개를 입력받아 문자열이 해당 문자를 포함하고
+	 *       있는지 여부를 반환합니다.
+	 * 예1: hasChar("hello123", 'l') -> true
+	 * 예2: hasNumber("박재홍", 'h') -> false
 	 */
+	static boolean hasChar(String str, char ch) {
+		
+		return false;
+	}
 	
 	
 	
