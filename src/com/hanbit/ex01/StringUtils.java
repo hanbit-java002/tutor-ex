@@ -104,6 +104,12 @@ public class StringUtils {
 	 */
 	
 	
+	/*
+	 * 함수명: isAlphabet
+	 * 매개변수: char ch
+	 * 리턴타입: boolean
+	 * 설명: 입력받은 문자가 a-z 또는 A-Z 이면 true, 아니면 false를 반환합니다.
+	 */
 	
 	
 	
