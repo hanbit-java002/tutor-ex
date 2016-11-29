@@ -18,6 +18,8 @@ public class StringUtils {
 		System.out.println("isAlphabet: " + isAlphabet((char) 65));
 		
 		System.out.println("isAlphaOrDigit: " +isAlphaOrDigit("Fighting_123"));
+		
+		System.out.println("removeChar: " + removeChar(null, '3'));
 	}
 	
 	/*
@@ -159,6 +161,43 @@ public class StringUtils {
 	 * 예2: removeChar("java", 'a') -> "jv"
 	 * 예3: removeChar(null, '3') -> null
 	 */
+	static String removeChar(String str, char ch) {
+		if (str == null) {
+			return null;
+		}
+		
+		char[] chars = str.toCharArray();
+		String result = "";
+		
+		for (int i=0;i<chars.length;i++) {
+			if (chars[i] == ch) {
+				continue;
+			}
+			
+			result += chars[i];
+		}
+		
+		return result;
+	}
+	
+	/*
+	 * 함수명: removeStr
+	 * 매개변수1: String str
+	 * 매개변수2: String rmStr
+	 * 리턴타입: String
+	 * 설명: 입력받은 문자열에서 주어진 문자열을 삭제하고 반환합니다.
+	 * 예1: removeStr("hello", "ll") -> "heo"
+	 * 예2: removeStr("java", "av") -> "ja"
+	 * 예3: removeStr(null, "334") -> null
+	 * 예4: removeStr("hanbit", "hans") -> "hanbit"
+	 * 예5: removeStr("banana", "na") -> "ba"
+	 */
+
+	
+	
+	
+	
+	
 	
 	
 	
