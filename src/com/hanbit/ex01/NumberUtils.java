@@ -247,7 +247,10 @@ public class NumberUtils {
 	 * 예1: plusStringValue("23", "53") -> 76
 	 * 예2: plusStringValue("45", "5시") -> 45
 	 */
-	
+	static int plusStringValue(String str1, String str2) {
+		
+		return stringToInt(str1) + stringToInt(str2);
+	}
 	
 	
 	
