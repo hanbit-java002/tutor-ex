@@ -26,9 +26,17 @@ public class NumberUtils {
 		// max 함수를 사용하여 가장 큰 값을 구하시오.
 		// 출력: 가장 큰 수는 ? 입니다.
 		int[] numbers = new int[] {100, 39, 55, 193, 98};
+		System.out.println("가장 큰 수는 " + max(numbers) + " 입니다.");
+		
+		// min 함수를 사용하여 가장 큰 값을 구하시오.
+		// 출력: 가장 작은 수는 ? 입니다.
+		System.out.println("가장 작은 수는 " + min(numbers) + " 입니다.");
 		
 		// stringToInt 사용
 		System.out.println(stringToInt("-4584.9"));
+		
+		// plusStringValue 사용
+		System.out.println(plusStringValue("35", "47"));
 	}
 	
 	/*
