@@ -20,6 +20,14 @@ public class StringUtils {
 		System.out.println("isAlphaOrDigit: " +isAlphaOrDigit("Fighting_123"));
 		
 		System.out.println("removeChar: " + removeChar(null, '3'));
+		
+		System.out.println("removeStr(\"hello\", \"ll\") -> " + removeStr("hello", "ll"));
+		System.out.println("removeStr(\"java\", \"av\") -> " + removeStr("java", "av"));
+		System.out.println("removeStr(null, \"334\") -> " + removeStr(null, "334"));
+		System.out.println("removeStr(\"hanbit\", \"hans\") -> " + removeStr("hanbit", "hans"));
+		System.out.println("removeStr(\"banana\", \"na\") -> " + removeStr("banana", "na"));
+		System.out.println("removeStr(\"banana\", null) -> " + removeStr("banana", null));
+		System.out.println("removeStr(\"banana\", \"bananaa\") -> " + removeStr("banana", "bananaa"));
 	}
 	
 	/*
@@ -192,7 +200,48 @@ public class StringUtils {
 	 * 예4: removeStr("hanbit", "hans") -> "hanbit"
 	 * 예5: removeStr("banana", "na") -> "ba"
 	 */
+	static String removeStr(String str, String rmStr) {
+		if (str == null) {
+			return null;
+		}
 
+		if (rmStr == null || "".equals(rmStr) || str.length() < rmStr.length()) {
+			return str;
+		}
+		
+		String result = "";
+		
+		char[] chars = str.toCharArray();
+		char[] rmChars = rmStr.toCharArray();
+		
+		for (int i=0;i<chars.length;i++) {
+			boolean match = true;
+			
+			if (chars[i] != rmChars[0]) {
+				match = false;
+			}
+			else if (chars.length - i < rmChars.length) {
+				match = false;
+			}
+			else {
+				for (int j=0;j<rmChars.length;j++) {
+					if (rmChars[j] != chars[i+j]) {
+						match = false;
+						break;
+					}
+				}
+			}
+			
+			if (match) {
+				i += rmChars.length - 1;
+			}
+			else {
+				result += chars[i];
+			}
+		}
+		
+		return result;
+	}
 	
 	
 	
