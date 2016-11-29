@@ -27,6 +27,8 @@ public class NumberUtils {
 		// 출력: 가장 큰 수는 ? 입니다.
 		int[] numbers = new int[] {100, 39, 55, 193, 98};
 		
+		// stringToInt 사용
+		System.out.println(stringToInt("-4584.9"));
 	}
 	
 	/*
@@ -152,6 +154,105 @@ public class NumberUtils {
 	 * 예3: stringToInt("9.9") -> 9
 	 * 예3: stringToInt("5시") -> 0
 	 */
+	static int stringToInt(String str) {
+		if (!isNumber(str)) {
+			return 0;
+		}
+		
+		char[] chars = str.toCharArray();
+		int newLength = 0;
+		boolean negative = false;
+		
+		for (int i=0;i<chars.length;i++) {
+			if (chars[i] == '.') {
+				break;
+			}
+			else if (chars[i] == '-') {
+				negative = true;
+				continue;
+			}
+			
+			newLength++;
+		}
+		
+		char[] newChars = new char[newLength];
+		int startPos = 0;
+		
+		if (negative) {
+			startPos = 1;
+		}
+		
+		for (int i=startPos;i<newChars.length + startPos;i++) {
+			newChars[i - startPos] = chars[i];
+		}
+		
+		int result = 0;
+		
+		for (int i=0;i<newChars.length;i++) {
+			char ch = newChars[i];
+			int pos = newChars.length - i;
+			int num = 0;
+			
+			if (ch == '0') {
+				continue;
+			}
+			else if (ch == '1') {
+				num = 1;
+			}
+			else if (ch == '2') {
+				num = 2;
+			}
+			else if (ch == '3') {
+				num = 3;
+			}
+			else if (ch == '4') {
+				num = 4;
+			}
+			else if (ch == '5') {
+				num = 5;
+			}
+			else if (ch == '6') {
+				num = 6;
+			}
+			else if (ch == '7') {
+				num = 7;
+			}
+			else if (ch == '8') {
+				num = 8;
+			}
+			else if (ch == '9') {
+				num = 9;
+			}
+			
+			for (int j=1;j<pos;j++) {
+				num *= 10;
+			}
+			
+			result += num;
+		}
+		
+		if (negative) {
+			result *= -1;
+		}
+		
+		return result;
+	}
+	
+	/*
+	 * 함수명: plusStringValue
+	 * 매개변수1: String str1
+	 * 매개변수2: String str2
+	 * 리턴타입: int
+	 * 설명: 두개의 숫자형태의 문자열을 받아 각 문자열의 숫자값의 합을 반환합니다.
+	 * 예1: plusStringValue("23", "53") -> 76
+	 * 예2: plusStringValue("45", "5시") -> 45
+	 */
+	
+	
+	
+	
+	
+	
 	
 	
 	
