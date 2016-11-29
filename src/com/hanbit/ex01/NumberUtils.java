@@ -129,8 +129,29 @@ public class NumberUtils {
 	 * 예2: min(new int[] {7, 10, 3, 99}) -> 3
 	 * 예3: min(new int[] {107, -10, 3, 99, 100}) -> -10
 	 */
+	static int min(int[] numbers) {
+		int min = Integer.MAX_VALUE;
+		
+		for (int i=0;i<numbers.length;i++) {
+			if (numbers[i] < min) {
+				min = numbers[i];
+			}
+		}
+		
+		return min;
+	}
 	
-	
+	/*
+	 * 함수명: stringToInt
+	 * 매개변수: String str
+	 * 리턴타입: int
+	 * 설명: 숫자형태의 문자열을 입력받아 정수형태로 반환합니다.
+	 *       단, 숫자형태가 아니면 0을 반환합니다.
+	 * 예1: stringToInt("123") -> 123
+	 * 예2: stringToInt("0011") -> 11
+	 * 예3: stringToInt("9.9") -> 9
+	 * 예3: stringToInt("5시") -> 0
+	 */
 	
 	
 	
