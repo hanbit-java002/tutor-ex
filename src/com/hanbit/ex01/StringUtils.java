@@ -76,7 +76,7 @@ public class StringUtils {
 		
 		// 2. 각 문자를 하나씩 공백인지 비교
 		for (int i=0;i<chars.length;i++) {
-			if (chars[i] != ' ' && chars[i] != '\t' && chars[i] != '\r' && chars[i] != '\n') {
+			if (!isWhitespace(chars[i])) {
 				return false;
 			}
 		}
@@ -91,7 +91,17 @@ public class StringUtils {
 	 * 리턴타입: boolean
 	 * 설명: 입력받은 문자가 공백이면 true, 아니면 false를 반환합니다.
 	 */
+	static boolean isWhitespace(char ch) {
+		
+		return ch == 32 || ch == 9 || ch == 13 || ch == 10;
+	}
 	
+	/*
+	 * 함수명: isDigit
+	 * 매개변수: char ch
+	 * 리턴타입: boolean
+	 * 설명: 입력받은 문자가 0-9 이면 true, 아니면 false를 반환합니다.
+	 */
 	
 	
 	
