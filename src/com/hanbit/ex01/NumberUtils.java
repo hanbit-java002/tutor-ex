@@ -14,8 +14,14 @@ public class NumberUtils {
 		
 		// isNumber를 사용하여 다음 문자열이 숫자인지 출력하세요.
 		// 출력: ? 은 숫자입니다. / ? 은 숫자가 아닙니다.
-		String str = "56";
+		String str = "-56.0";
 		
+		if (isNumber(str)) {
+			System.out.println(str + " 은 숫자입니다.");
+		}
+		else {
+			System.out.println(str + " 은 숫자가 아닙니다.");
+		}
 	}
 	
 	/*
@@ -49,6 +55,48 @@ public class NumberUtils {
 	 * 예2: isNumber("0.3") -> true
 	 * 예3: isNumber("4시") -> false
 	 */
+	static boolean isNumber(String str) {
+		char[] chars = str.toCharArray();
+		boolean negative = false;
+		boolean hasPoint = false;
+		
+		for (int i=0;i<chars.length;i++) {
+			char ch = chars[i];
+			
+			if (!(ch == '0' || ch == '1' || ch == '2' || ch == '3' || ch == '4' || ch == '5'
+					|| ch == '6' || ch == '7' || ch == '8' || ch == '9')) {
+				if (i == 0 && ch == '-') {
+					negative = true;
+					continue;
+				}
+				
+				int pointMinPosition = 0;
+				
+				if (negative) {
+					pointMinPosition = 1;
+				}
+				
+				if (!hasPoint && i > pointMinPosition && ch == '.') {
+					if (i == chars.length - 1) {
+						return false;
+					}
+					
+					hasPoint = true;
+					continue;
+				}
+				
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	
+	
+	
+	
+	
+	
 	
 	
 	
