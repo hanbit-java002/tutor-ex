@@ -6,13 +6,13 @@ public class NumberUtils {
 		int x = 8;
 		int y = 10;
 		
-		// compare를 사용하여 결과값을 출력하세요.
+		// compare 함수를 사용하여 결과값을 출력하세요.
 		// 출력: compare(x, y)의 결과는 ? 입니다.
 		String result = "compare(" + x + ", " + y + ")의 결과는 "; 
 		result += compare(x, y) + " 입니다.";
 		System.out.println(result);
 		
-		// isNumber를 사용하여 다음 문자열이 숫자인지 출력하세요.
+		// isNumber 함수를 사용하여 다음 문자열이 숫자인지 출력하세요.
 		// 출력: ? 은 숫자입니다. / ? 은 숫자가 아닙니다.
 		String str = "-56.0";
 		
@@ -22,6 +22,11 @@ public class NumberUtils {
 		else {
 			System.out.println(str + " 은 숫자가 아닙니다.");
 		}
+		
+		// max 함수를 사용하여 가장 큰 값을 구하시오.
+		// 출력: 가장 큰 수는 ? 입니다.
+		int[] numbers = new int[] {100, 39, 55, 193, 98};
+		
 	}
 	
 	/*
@@ -92,7 +97,15 @@ public class NumberUtils {
 		return true;
 	}
 	
-	
+	/*
+	 * 함수명: max
+	 * 매개변수: int[] numbers
+	 * 리턴타입: int
+	 * 설명: 입력받은 정수 배열의 값 중 가장 큰 값을 반환합니다.
+	 * 예1: max(new int[] {7, 10, 3}) -> 10
+	 * 예2: max(new int[] {7, 10, 3, 99}) -> 99
+	 * 예3: max(new int[] {107, 10, 3, 99, 100}) -> 107
+	 */
 	
 	
 	
