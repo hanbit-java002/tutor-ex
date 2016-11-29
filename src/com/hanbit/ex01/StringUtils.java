@@ -11,6 +11,11 @@ public class StringUtils {
 		System.out.println("isEmpty: " + isEmpty(str));
 		
 		System.out.println("isBlank: " + isBlank("\t"));
+		
+		String text = new String(new char[] {(char) 65, (char) 66, (char) 67});
+		System.out.println("text from chars: " + text);
+		
+		System.out.println("isAlphabet: " + isAlphabet((char) 65));
 	}
 	
 	/*
@@ -102,6 +107,10 @@ public class StringUtils {
 	 * 리턴타입: boolean
 	 * 설명: 입력받은 문자가 0-9 이면 true, 아니면 false를 반환합니다.
 	 */
+	static boolean isDigit(char ch) {
+		
+		return ch >= 48 && ch <= 57;
+	}
 	
 	
 	/*
@@ -110,6 +119,25 @@ public class StringUtils {
 	 * 리턴타입: boolean
 	 * 설명: 입력받은 문자가 a-z 또는 A-Z 이면 true, 아니면 false를 반환합니다.
 	 */
+	static boolean isAlphabet(char ch) {
+		
+		return (ch >= 97 && ch <=122) || (ch >= 65 && ch <= 90);
+	}
+	
+	/*
+	 * 함수명: isAlphaOrDigit
+	 * 매개변수: String str
+	 * 리턴타입: boolean
+	 * 설명: 입력받은 문자열이 알파벳 또는 숫자로 구성되어있으면 true,
+	 *       아니면 false를 반환합니다.
+	 * 예1: isAlphaOrDigit("hello") -> true
+	 * 예2: isAlphaOrDigit("1234") -> true
+	 * 예3: isAlphaOrDigit("1st") -> true
+	 * 예4: isAlphaOrDigit("Fighting!") -> false
+	 */
+	
+	
+	
 	
 	
 	
