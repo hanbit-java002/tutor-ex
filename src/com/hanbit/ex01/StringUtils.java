@@ -8,7 +8,9 @@ public class StringUtils {
 		System.out.println(reverse(fruit));
 		
 		String str = null;
-		System.out.println(isEmpty(str));
+		System.out.println("isEmpty: " + isEmpty(str));
+		
+		System.out.println("isBlank: " + isBlank("\t"));
 	}
 	
 	/*
@@ -62,6 +64,34 @@ public class StringUtils {
 	 * 예2: isBlank("   ") -> true
 	 * 예3: isBlank("  ab   ") -> false
 	 */
+	static boolean isBlank(String str) {
+		// 문자열이 null 이면 true
+		if (str == null) {
+			return true;
+		}
+		
+		// 문자열의 각 문자가 하나라도 공백이 아니면 false
+		// 1. 문자열의 각 문자를 분리
+		char[] chars = str.toCharArray();
+		
+		// 2. 각 문자를 하나씩 공백인지 비교
+		for (int i=0;i<chars.length;i++) {
+			if (chars[i] != ' ' && chars[i] != '\t' && chars[i] != '\r' && chars[i] != '\n') {
+				return false;
+			}
+		}
+		
+		// 위 조건에 충족되지 않으면 true		
+		return true;
+	}
+	
+	/*
+	 * 함수명: isWhitespace
+	 * 매개변수: char ch
+	 * 리턴타입: boolean
+	 * 설명: 입력받은 문자가 공백이면 true, 아니면 false를 반환합니다.
+	 */
+	
 	
 	
 	
