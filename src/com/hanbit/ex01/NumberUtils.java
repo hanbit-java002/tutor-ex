@@ -102,13 +102,33 @@ public class NumberUtils {
 	 * 매개변수: int[] numbers
 	 * 리턴타입: int
 	 * 설명: 입력받은 정수 배열의 값 중 가장 큰 값을 반환합니다.
+	 * 힌트: int max = Integer.MIN_VALUE;
 	 * 예1: max(new int[] {7, 10, 3}) -> 10
 	 * 예2: max(new int[] {7, 10, 3, 99}) -> 99
 	 * 예3: max(new int[] {107, 10, 3, 99, 100}) -> 107
 	 */
+	static int max(int[] numbers) {
+		int max = Integer.MIN_VALUE;
+		
+		for (int i=0;i<numbers.length;i++) {
+			if (numbers[i] > max) {
+				max = numbers[i];
+			}
+		}
+		
+		return max;
+	}
 	
-	
-	
+	/*
+	 * 함수명: min
+	 * 매개변수: int[] numbers
+	 * 리턴타입: int
+	 * 설명: 입력받은 정수 배열의 값 중 가장 작은 값을 반환합니다.
+	 * 힌트: int min = Integer.MAX_VALUE;
+	 * 예1: min(new int[] {7, 10, 3}) -> 3
+	 * 예2: min(new int[] {7, 10, 3, 99}) -> 3
+	 * 예3: min(new int[] {107, -10, 3, 99, 100}) -> -10
+	 */
 	
 	
 	
