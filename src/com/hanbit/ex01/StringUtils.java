@@ -16,6 +16,8 @@ public class StringUtils {
 		System.out.println("text from chars: " + text);
 		
 		System.out.println("isAlphabet: " + isAlphabet((char) 65));
+		
+		System.out.println("isAlphaOrDigit: " +isAlphaOrDigit("Fighting_123"));
 	}
 	
 	/*
@@ -135,8 +137,28 @@ public class StringUtils {
 	 * 예3: isAlphaOrDigit("1st") -> true
 	 * 예4: isAlphaOrDigit("Fighting!") -> false
 	 */
+	static boolean isAlphaOrDigit(String str) {
+		char[] chars = str.toCharArray();
+		
+		for (int i=0;i<chars.length;i++) {
+			if (!isAlphabet(chars[i]) && !isDigit(chars[i])) {
+				return false;
+			}
+		}
+		
+		return true;
+	}
 	
-	
+	/*
+	 * 함수명: removeChar
+	 * 매개변수1: String str
+	 * 매개변수2: char ch
+	 * 리턴타입: String
+	 * 설명: 입력받은 문자열에서 주어진 문자를 삭제하고 반환합니다.
+	 * 예1: removeChar("hello", 'l') -> "heo"
+	 * 예2: removeChar("java", 'a') -> "jv"
+	 * 예3: removeChar(null, '3') -> null
+	 */
 	
 	
 	
