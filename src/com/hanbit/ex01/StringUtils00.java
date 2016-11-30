@@ -3,7 +3,8 @@ package com.hanbit.ex01;
 public class StringUtils00 {
 
 	public static void main(String[] args) {
-		System.out.println(compare("백미리", "백수현"));
+		System.out.println("ABC".compareTo("aabc"));
+		System.out.println(compare("ABC", "aabc", false));
 		
 		System.out.println(switchCase('!'));
 	}
@@ -13,15 +14,15 @@ public class StringUtils00 {
 	 * 매개변수1: String left
 	 * 매개변수2: String right
 	 * 리턴타입: int
-	 * 설명: 두개의 문자열을 입력받아 왼쪽이 크면 1,
-	 *       오른쪽이 크면 -1, 같으면 0을 반환합니다.
+	 * 설명: 두개의 문자열을 입력받아 왼쪽이 크면 양수,
+	 *       오른쪽이 크면 음수, 같으면 0을 반환합니다.
 	 * 예1: compare("11", "2") -> -1
 	 * 예2: compare("11111111111111", "2") -> -1
 	 * 예3: compare("abc", "abcd") -> -1
 	 * 예4: compare("ab", "ABC") -> -1
 	 * 예5: compare("abc", "ABC") -> ?
 	 */
-	static int compare(String left, String right) {
+	static int compare(String left, String right, boolean ignoreCase) {
 		if (left == null && right == null) {
 			return 0;
 		}
@@ -32,8 +33,10 @@ public class StringUtils00 {
 			return -1;
 		}
 		
-		left = toLowerCase(left);
-		right = toLowerCase(right);
+		if (ignoreCase) {
+			left = toLowerCase(left);
+			right = toLowerCase(right);
+		}
 
 		char[] leftChars = left.toCharArray();
 		char[] rightChars = right.toCharArray();
@@ -43,19 +46,12 @@ public class StringUtils00 {
 				return 1;
 			}
 			
-			if (leftChars[i] > rightChars[i]) {
-				return 1;
-			}
-			else if (leftChars[i] < rightChars[i]) {
-				return -1;
+			if (leftChars[i] != rightChars[i]) {
+				return leftChars[i] - rightChars[i];
 			}
 		}
 		
-		if (leftChars.length < rightChars.length) {
-			return -1;
-		}
-		
-		return 0;
+		return leftChars.length - rightChars.length;
 	}
 	
 	/*
@@ -190,7 +186,16 @@ public class StringUtils00 {
 		return result;
 	}
 	
-	
+	/*
+	 * 함수명: contains
+	 * 매개변수1: String str
+	 * 매개변수2: String search
+	 * 리턴타입: boolean
+	 * 설명: 입력받은 문자열에 검색할 문자열이 있으면 true, 없으면 false를 반환합니다.
+	 * 예1: contains("banana", "an") -> true
+	 * 예2: contains("apple", "led") -> false
+	 * 예3: contains(null, null) -> false
+	 */
 	
 	
 	
