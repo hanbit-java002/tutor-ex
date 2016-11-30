@@ -7,6 +7,8 @@ public class StringUtils00 {
 		System.out.println(compare("ABC", "aabc", false));
 		
 		System.out.println(switchCase('!'));
+		
+		System.out.println(contains("banana", "a"));
 	}
 	
 	/*
@@ -194,11 +196,56 @@ public class StringUtils00 {
 	 * 설명: 입력받은 문자열에 검색할 문자열이 있으면 true, 없으면 false를 반환합니다.
 	 * 예1: contains("banana", "an") -> true
 	 * 예2: contains("apple", "led") -> false
-	 * 예3: contains("hanbit", "NB") -> false
-	 * 예4: contains(null, null) -> false
+	 * 예3: contains("apple", "pa") -> false
+	 * 예4: contains("hanbit", "NB") -> false
+	 * 예5: contains(null, null) -> false
 	 */
+	static boolean contains(String str, String search) {
+		if (str == null || search == null) {
+			return false;
+		}
+		
+		char[] chars = str.toCharArray();
+		char[] searchChars = search.toCharArray();
+		
+		for (int i=0;i<chars.length;i++) {
+			boolean match = true;
+			
+			if (chars[i] != searchChars[0]) {
+				match = false;
+			}
+			else if (chars.length - i < searchChars.length) {
+				match = false;
+			}
+			else {
+				for (int j=0;j<searchChars.length;j++) {
+					if (searchChars[j] != chars[i+j]) {
+						match = false;
+						break;
+					}
+				}
+			}
+			
+			if (match) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
 	
-	
+	/*
+	 * 함수명: countMatches
+	 * 매개변수1: String str
+	 * 매개변수2: String search
+	 * 리턴타입: int
+	 * 설명: 입력받은 문자열에 검색할 문자열이 몇번 포함되었는지 반환합니다.
+	 * 예1: countMatches("banana", "an") -> 2
+	 * 예2: countMatches("apple", "led") -> 0
+	 * 예3: countMatches("apple", "ap") -> 1
+	 * 예4: countMatches("hanbit", "NB") -> 0
+	 * 예5: countMatches(null, null) -> 0
+	 */
 	
 	
 	
