@@ -194,8 +194,16 @@ public class StringUtils00 {
 	 * 설명: 입력받은 문자열에 검색할 문자열이 있으면 true, 없으면 false를 반환합니다.
 	 * 예1: contains("banana", "an") -> true
 	 * 예2: contains("apple", "led") -> false
-	 * 예3: contains(null, null) -> false
+	 * 예3: contains("hanbit", "NB") -> false
+	 * 예4: contains(null, null) -> false
 	 */
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
