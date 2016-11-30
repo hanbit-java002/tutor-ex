@@ -8,7 +8,7 @@ public class StringUtils00 {
 		
 		System.out.println(switchCase('!'));
 		
-		System.out.println(contains("banana", "a"));
+		System.out.println(contains("banana", "an"));
 	}
 	
 	/*
@@ -218,7 +218,7 @@ public class StringUtils00 {
 				match = false;
 			}
 			else {
-				for (int j=0;j<searchChars.length;j++) {
+				for (int j=1;j<searchChars.length;j++) {
 					if (searchChars[j] != chars[i+j]) {
 						match = false;
 						break;
@@ -246,7 +246,42 @@ public class StringUtils00 {
 	 * 예4: countMatches("hanbit", "NB") -> 0
 	 * 예5: countMatches(null, null) -> 0
 	 */
-	
+	static int countMatches(String str, String search) {
+		if (str == null || search == null) {
+			return 0;
+		}
+		
+		int countMatches = 0;
+		
+		char[] chars = str.toCharArray();
+		char[] rmChars = search.toCharArray();
+		
+		for (int i=0;i<chars.length;i++) {
+			boolean match = true;
+			
+			if (chars[i] != rmChars[0]) {
+				match = false;
+			}
+			else if (chars.length - i < rmChars.length) {
+				match = false;
+			}
+			else {
+				for (int j=0;j<rmChars.length;j++) {
+					if (rmChars[j] != chars[i+j]) {
+						match = false;
+						break;
+					}
+				}
+			}
+			
+			if (match) {
+				i += rmChars.length - 1;
+				countMatches++;
+			}
+		}
+		
+		return countMatches;
+	}
 	
 	
 	
