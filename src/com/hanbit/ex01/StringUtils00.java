@@ -19,6 +19,7 @@ public class StringUtils00 {
 	 * 예2: compare("11111111111111", "2") -> -1
 	 * 예3: compare("abc", "abcd") -> -1
 	 * 예4: compare("ab", "ABC") -> -1
+	 * 예5: compare("abc", "ABC") -> ?
 	 */
 	static int compare(String left, String right) {
 		if (left == null && right == null) {
@@ -30,6 +31,9 @@ public class StringUtils00 {
 		else if (left == null && right != null) {
 			return -1;
 		}
+		
+		left = toLowerCase(left);
+		right = toLowerCase(right);
 
 		char[] leftChars = left.toCharArray();
 		char[] rightChars = right.toCharArray();
@@ -121,7 +125,20 @@ public class StringUtils00 {
 	 * 예1: toLowerCase("ABC") -> "abc"
 	 * 예2: toLowerCase("Java") -> "java"
 	 */
-	
+	static String toLowerCase(String str) {
+		if (str == null) {
+			return null;
+		}
+		
+		char[] chars = str.toCharArray();
+		String result = "";
+		
+		for (int i=0;i<chars.length;i++) {
+			result += toLowerCase(chars[i]);
+		}
+		
+		return result;
+	}
 	
 	/*
 	 * 함수명: toUpperCase
@@ -133,8 +150,45 @@ public class StringUtils00 {
 	 * 예2: toUpperCase("Java") -> "JAVA"
 	 * 예3: toUpperCase(null) -> null
 	 */
+	static String toUpperCase(String str) {
+		if (str == null) {
+			return null;
+		}
+		
+		char[] chars = str.toCharArray();
+		String result = "";
+		
+		for (int i=0;i<chars.length;i++) {
+			result += toUpperCase(chars[i]);
+		}
+		
+		return result;
+	}
 	
-	
+	/*
+	 * 함수명: switchCase
+	 * 매개변수: String str
+	 * 리턴타입: String
+	 * 설명: 입력받은 영문 소문자를 대문자로, 대문자를 소문자로 반환합니다.
+	 *       단, 영문이 아니면 그대로 반환합니다.
+	 * 예1: switchCase("hello") -> "HELLO"
+	 * 예2: switchCase("Java") -> "jAVA"
+	 * 예3: switchCase(null) -> null
+	 */
+	static String switchCase(String str) {
+		if (str == null) {
+			return null;
+		}
+		
+		char[] chars = str.toCharArray();
+		String result = "";
+		
+		for (int i=0;i<chars.length;i++) {
+			result += switchCase(chars[i]);
+		}
+		
+		return result;
+	}
 	
 	
 	
