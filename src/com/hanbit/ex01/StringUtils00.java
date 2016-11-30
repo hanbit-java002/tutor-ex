@@ -62,6 +62,16 @@ public class StringUtils00 {
 		return leftChars.length - rightChars.length;
 	}
 	
+	static int compare(String left, String right) {
+		
+		return compare(left, right, false);
+	}
+	
+	static int compareIgnoreCase(String left, String right) {
+		
+		return compare(left, right, true);
+	}
+	
 	/*
 	 * 함수명: switchCase
 	 * 매개변수: char ch
@@ -327,7 +337,7 @@ public class StringUtils00 {
 	 * 예4: replace("hanbit", "NB", "nba", -1) -> "hanbit"
 	 * 예5: replace(null, null, null, -1) -> null
 	 */
-	static String replace(String str, String search, String replaceStr, int limit) {
+	static String replace(String str, String search, String replaceStr, final int limit) {
 		if (str == null) {
 			return null;
 		}
@@ -344,6 +354,7 @@ public class StringUtils00 {
 			return str;
 		}
 		
+		int _limit = limit;
 		String result = "";
 		
 		char[] chars = str.toCharArray();
@@ -352,7 +363,7 @@ public class StringUtils00 {
 		for (int i=0;i<chars.length;i++) {
 			boolean match = true;
 			
-			if (limit < 0 || limit > 0) {
+			if (_limit < 0 || _limit > 0) {
 				match = isMatch(chars, searchChars, i);
 			}
 			else {
@@ -362,7 +373,7 @@ public class StringUtils00 {
 			if (match) {
 				i += searchChars.length - 1;
 				result += replaceStr;
-				limit--;
+				_limit--;
 			}
 			else {
 				result += chars[i];
