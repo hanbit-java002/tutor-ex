@@ -15,6 +15,8 @@ public class StringUtils00 {
 		
 		System.out.println(replace("banana", "an", "o"));
 		System.out.println(replace("banana", "an", "o", 1));
+		
+		System.out.println(equals(new String("abc"), "abc"));
 	}
 	
 	/*
@@ -390,12 +392,36 @@ public class StringUtils00 {
 	
 	/*
 	 * 함수명: equals
-	 * 매개변수1: str1
-	 * 매개변수2: str2
+	 * 매개변수1: String str1
+	 * 매개변수2: String str2
 	 * 리턴타입: boolean
 	 * 설명: 두개의 문자열이 같으면 true, 다르면 false를 반환합니다.
 	 */
-	
+	static boolean equals(String str1, String str2) {
+		
+		if (str1 == null && str2 == null) {
+			return true;
+		}
+		
+		if (str1 == null || str2 == null) {
+			return false;
+		}
+		
+		if (str1.length() != str2.length()) {
+			return false;
+		}
+		
+		char[] chars1 = str1.toCharArray();
+		char[] chars2 = str2.toCharArray();
+		
+		for (int i=0;i<chars1.length;i++) {
+			if (chars1[i] != chars2[i]) {
+				return false;
+			}
+		}
+		
+		return true;
+	}
 	
 	
 	
