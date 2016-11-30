@@ -274,6 +274,19 @@ public class StringUtils00 {
 		return match;
 	}
 	
+	/*
+	 * 함수명: indexOf
+	 * 매개변수1: String str
+	 * 매개변수2: String search
+	 * 리턴타입: int
+	 * 설명: 입력받은 문자열에 검색할 문자열이 있으면 시작되는 위치를,
+	 *       없으면 -1을 반환합니다.
+	 * 예1: indexOf("banana", "an") -> 1
+	 * 예2: indexOf("apple", "led") -> -1
+	 * 예3: indexOf("apple", "ple") -> 2
+	 * 예4: indexOf("hanbit", "NB") -> -1
+	 * 예5: indexOf(null, null) -> -1
+	 */
 
 	
 	
