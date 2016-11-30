@@ -16,6 +16,7 @@ public class StringUtils00 {
 	 * 예1: compare("11", "2") -> -1
 	 * 예2: compare("11111111111111", "2") -> -1
 	 * 예3: compare("abc", "abcd") -> -1
+	 * 예4: compare("ab", "ABC") -> -1
 	 */
 	static int compare(String left, String right) {
 		if (left == null && right == null) {
@@ -27,7 +28,7 @@ public class StringUtils00 {
 		else if (left == null && right != null) {
 			return -1;
 		}
-		
+
 		char[] leftChars = left.toCharArray();
 		char[] rightChars = right.toCharArray();
 		
@@ -50,4 +51,33 @@ public class StringUtils00 {
 		
 		return 0;
 	}
+	
+	/*
+	 * 함수명: switchCase
+	 * 매개변수: char ch
+	 * 리턴타입: char
+	 * 설명: 소문자를 입력받으면 대문자로, 대문자를 입력받으면 소문자로 반환합니다.
+	 * 		 단, 영문자가 아니면 그대로 반환합니다.
+	 * 예1: switchCase('a') -> 'A'
+	 * 예2: switchCase('D') -> 'd'
+	 * 예3: switchCase('!') -> '!'
+	 */
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
