@@ -9,6 +9,10 @@ public class StringUtils00 {
 		System.out.println(switchCase('!'));
 		
 		System.out.println(contains("banana", "an"));
+		
+		System.out.println(countMatches("banana", "a"));
+		
+		System.out.println(replace("banana", "na", null));
 	}
 	
 	/*
@@ -311,15 +315,48 @@ public class StringUtils00 {
 	 * 매개변수1: String str
 	 * 매개변수2: String search
 	 * 매개변수3: String replaceStr
+	 * 매개변수4: int limit
 	 * 리턴타입: String
 	 * 설명: 입력받은 문자열에서 주어진 문자열을 찾아 대체 문자열로 교체하여 반환합니다.
-	 * 예1: replace("banana", "an", "o") -> "booa"
-	 * 예2: replace("apple", "le", "lication") -> "application"
-	 * 예3: replace("apple", "ple", "proach") -> "approach"
-	 * 예4: replace("hanbit", "NB") -> "hanbit"
-	 * 예5: replace(null, null) -> null
+	 *       단, 교체 제한 수 만큼만 교체합니다. 제한이 -1 이면 제한을 두지 않습니다.
+	 * 예1: replace("banana", "an", "o", 1) -> "boana"
+	 * 예2: replace("apple", "le", "lication", 0) -> "apple"
+	 * 예3: replace("apple", "ple", "proach", 5) -> "approach"
+	 * 예4: replace("hanbit", "NB", "nba", -1) -> "hanbit"
+	 * 예5: replace(null, null, null, -1) -> null
 	 */
-	
+	static String replace(String str, String search, String replaceStr) {
+		if (str == null) {
+			return null;
+		}
+
+		if (search == null || "".equals(search) || str.length() < search.length()) {
+			return str;
+		}
+		
+		if (replaceStr == null) {
+			replaceStr = "";
+		}
+		
+		String result = "";
+		
+		char[] chars = str.toCharArray();
+		char[] searchChars = search.toCharArray();
+		
+		for (int i=0;i<chars.length;i++) {
+			boolean match = isMatch(chars, searchChars, i);
+			
+			if (match) {
+				i += searchChars.length - 1;
+				result += replaceStr;
+			}
+			else {
+				result += chars[i];
+			}
+		}
+		
+		return result;
+	}
 	
 	
 	
