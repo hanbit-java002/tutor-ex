@@ -86,6 +86,13 @@ public class StringUtils00 {
 	 * 예1: toLowerCase('A') -> 'a'
 	 * 예2: toLowerCase('a') -> 'a'
 	 */
+	static char toLowerCase(char ch) {
+		if (ch >= 'A' && ch <= 'Z') {
+			return (char) (ch + ('a' - 'A'));
+		}
+		
+		return ch;
+	}
 	
 	
 	/*
@@ -94,14 +101,38 @@ public class StringUtils00 {
 	 * 리턴타입: char
 	 * 설명: 입력받은 영문 소문자를 대문자로 반환합니다.
 	 *       단, 영문 소문자가 아니면 그대로 반환합니다.
-	 * 예1: toUpperCase('A') -> 'A'
-	 * 예2: toUpperCase('a') -> 'A'
+	 * 예1: toUpperCase('a') -> 'A'
+	 * 예2: toUpperCase('A') -> 'A'
+	 */
+	static char toUpperCase(char ch) {
+		if (ch >= 'a' && ch <= 'z') {
+			return (char) (ch + ('A' - 'a'));
+		}
+		
+		return ch;
+	}
+	
+	/*
+	 * 함수명: toLowerCase
+	 * 매개변수: String ch
+	 * 리턴타입: String
+	 * 설명: 입력받은 영문 대문자를 소문자로 반환합니다.
+	 *       단, 영문 대문자가 아니면 그대로 반환합니다.
+	 * 예1: toLowerCase("ABC") -> "abc"
+	 * 예2: toLowerCase("Java") -> "java"
 	 */
 	
 	
-	
-	
-	
+	/*
+	 * 함수명: toUpperCase
+	 * 매개변수: String ch
+	 * 리턴타입: String
+	 * 설명: 입력받은 영문 소문자를 대문자로 반환합니다.
+	 *       단, 영문 소문자가 아니면 그대로 반환합니다.
+	 * 예1: toUpperCase("hello") -> "HELLO"
+	 * 예2: toUpperCase("Java") -> "JAVA"
+	 * 예3: toUpperCase(null) -> null
+	 */
 	
 	
 	
