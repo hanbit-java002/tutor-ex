@@ -209,22 +209,7 @@ public class StringUtils00 {
 		char[] searchChars = search.toCharArray();
 		
 		for (int i=0;i<chars.length;i++) {
-			boolean match = true;
-			
-			if (chars[i] != searchChars[0]) {
-				match = false;
-			}
-			else if (chars.length - i < searchChars.length) {
-				match = false;
-			}
-			else {
-				for (int j=1;j<searchChars.length;j++) {
-					if (searchChars[j] != chars[i+j]) {
-						match = false;
-						break;
-					}
-				}
-			}
+			boolean match = isMatch(chars, searchChars, i);
 			
 			if (match) {
 				return true;
@@ -233,7 +218,7 @@ public class StringUtils00 {
 		
 		return false;
 	}
-	
+
 	/*
 	 * 함수명: countMatches
 	 * 매개변수1: String str
@@ -254,34 +239,42 @@ public class StringUtils00 {
 		int countMatches = 0;
 		
 		char[] chars = str.toCharArray();
-		char[] rmChars = search.toCharArray();
+		char[] searchChars = search.toCharArray();
 		
 		for (int i=0;i<chars.length;i++) {
-			boolean match = true;
-			
-			if (chars[i] != rmChars[0]) {
-				match = false;
-			}
-			else if (chars.length - i < rmChars.length) {
-				match = false;
-			}
-			else {
-				for (int j=0;j<rmChars.length;j++) {
-					if (rmChars[j] != chars[i+j]) {
-						match = false;
-						break;
-					}
-				}
-			}
+			boolean match = isMatch(chars, searchChars, i);
 			
 			if (match) {
-				i += rmChars.length - 1;
+				i += searchChars.length - 1;
 				countMatches++;
 			}
 		}
 		
 		return countMatches;
 	}
+	
+	static boolean isMatch(char[] chars, char[] searchChars, int index) {
+		boolean match = true;
+		
+		if (chars[index] != searchChars[0]) {
+			match = false;
+		}
+		else if (chars.length - index < searchChars.length) {
+			match = false;
+		}
+		else {
+			for (int j=1;j<searchChars.length;j++) {
+				if (searchChars[j] != chars[index+j]) {
+					match = false;
+					break;
+				}
+			}
+		}
+		
+		return match;
+	}
+	
+
 	
 	
 	
