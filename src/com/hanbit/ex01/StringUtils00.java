@@ -287,8 +287,38 @@ public class StringUtils00 {
 	 * 예4: indexOf("hanbit", "NB") -> -1
 	 * 예5: indexOf(null, null) -> -1
 	 */
-
+	static int indexOf(String str, String search) {
+		if (str == null || search == null) {
+			return -1;
+		}
+		
+		char[] chars = str.toCharArray();
+		char[] searchChars = search.toCharArray();
+		
+		for (int i=0;i<chars.length;i++) {
+			boolean match = isMatch(chars, searchChars, i);
+			
+			if (match) {
+				return i;
+			}
+		}
+		
+		return -1;
+	}
 	
+	/*
+	 * 함수명: replace
+	 * 매개변수1: String str
+	 * 매개변수2: String search
+	 * 매개변수3: String replaceStr
+	 * 리턴타입: String
+	 * 설명: 입력받은 문자열에서 주어진 문자열을 찾아 대체 문자열로 교체하여 반환합니다.
+	 * 예1: replace("banana", "an", "o") -> "booa"
+	 * 예2: replace("apple", "le", "lication") -> "application"
+	 * 예3: replace("apple", "ple", "proach") -> "approach"
+	 * 예4: replace("hanbit", "NB") -> "hanbit"
+	 * 예5: replace(null, null) -> null
+	 */
 	
 	
 	
