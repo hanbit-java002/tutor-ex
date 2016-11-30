@@ -4,6 +4,7 @@ public class StringUtils00 {
 
 	public static void main(String[] args) {
 		System.out.println("ABC".compareTo("aabc"));
+		System.out.println(compare("ABC", "aabc"));
 		System.out.println(compare("ABC", "aabc", false));
 		
 		System.out.println(switchCase('!'));
@@ -12,7 +13,8 @@ public class StringUtils00 {
 		
 		System.out.println(countMatches("banana", "a"));
 		
-		System.out.println(replace("banana", "na", null));
+		System.out.println(replace("banana", "an", "o"));
+		System.out.println(replace("banana", "an", "o", 1));
 	}
 	
 	/*
@@ -325,7 +327,7 @@ public class StringUtils00 {
 	 * 예4: replace("hanbit", "NB", "nba", -1) -> "hanbit"
 	 * 예5: replace(null, null, null, -1) -> null
 	 */
-	static String replace(String str, String search, String replaceStr) {
+	static String replace(String str, String search, String replaceStr, int limit) {
 		if (str == null) {
 			return null;
 		}
@@ -338,17 +340,29 @@ public class StringUtils00 {
 			replaceStr = "";
 		}
 		
+		if (limit == 0) {
+			return str;
+		}
+		
 		String result = "";
 		
 		char[] chars = str.toCharArray();
 		char[] searchChars = search.toCharArray();
 		
 		for (int i=0;i<chars.length;i++) {
-			boolean match = isMatch(chars, searchChars, i);
+			boolean match = true;
+			
+			if (limit < 0 || limit > 0) {
+				match = isMatch(chars, searchChars, i);
+			}
+			else {
+				match = false;
+			}
 			
 			if (match) {
 				i += searchChars.length - 1;
 				result += replaceStr;
+				limit--;
 			}
 			else {
 				result += chars[i];
@@ -358,7 +372,10 @@ public class StringUtils00 {
 		return result;
 	}
 	
-	
+	static String replace(String str, String search, String replaceStr) {
+		
+		return replace(str, search, replaceStr, -1);
+	}
 	
 	
 	
