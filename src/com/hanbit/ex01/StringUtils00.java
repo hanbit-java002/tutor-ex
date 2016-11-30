@@ -4,6 +4,8 @@ public class StringUtils00 {
 
 	public static void main(String[] args) {
 		System.out.println(compare("백미리", "백수현"));
+		
+		System.out.println(switchCase('!'));
 	}
 	
 	/*
@@ -62,8 +64,39 @@ public class StringUtils00 {
 	 * 예2: switchCase('D') -> 'd'
 	 * 예3: switchCase('!') -> '!'
 	 */
+	static char switchCase(char ch) {
+		int gabOfCase = 'a' - 'A';
+		
+		if (ch >= 'A' && ch <= 'Z') {
+			return (char) (ch + gabOfCase);
+		}
+		else if (ch >= 'a' && ch <= 'z') {
+			return (char) (ch - gabOfCase);
+		}
+		
+		return ch;
+	}
+	
+	/*
+	 * 함수명: toLowerCase
+	 * 매개변수: char ch
+	 * 리턴타입: char
+	 * 설명: 입력받은 영문 대문자를 소문자로 반환합니다.
+	 *       단, 영문 대문자가 아니면 그대로 반환합니다.
+	 * 예1: toLowerCase('A') -> 'a'
+	 * 예2: toLowerCase('a') -> 'a'
+	 */
 	
 	
+	/*
+	 * 함수명: toUpperCase
+	 * 매개변수: char ch
+	 * 리턴타입: char
+	 * 설명: 입력받은 영문 소문자를 대문자로 반환합니다.
+	 *       단, 영문 소문자가 아니면 그대로 반환합니다.
+	 * 예1: toUpperCase('A') -> 'A'
+	 * 예2: toUpperCase('a') -> 'A'
+	 */
 	
 	
 	
