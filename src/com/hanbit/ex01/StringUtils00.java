@@ -114,7 +114,7 @@ public class StringUtils00 {
 	
 	/*
 	 * 함수명: toLowerCase
-	 * 매개변수: String ch
+	 * 매개변수: String str
 	 * 리턴타입: String
 	 * 설명: 입력받은 영문 대문자를 소문자로 반환합니다.
 	 *       단, 영문 대문자가 아니면 그대로 반환합니다.
@@ -125,7 +125,7 @@ public class StringUtils00 {
 	
 	/*
 	 * 함수명: toUpperCase
-	 * 매개변수: String ch
+	 * 매개변수: String str
 	 * 리턴타입: String
 	 * 설명: 입력받은 영문 소문자를 대문자로 반환합니다.
 	 *       단, 영문 소문자가 아니면 그대로 반환합니다.
