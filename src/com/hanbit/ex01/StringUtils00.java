@@ -388,6 +388,27 @@ public class StringUtils00 {
 		return replace(str, search, replaceStr, -1);
 	}
 	
+	/*
+	 * 함수명: equals
+	 * 매개변수1: str1
+	 * 매개변수2: str2
+	 * 리턴타입: boolean
+	 * 설명: 두개의 문자열이 같으면 true, 다르면 false를 반환합니다.
+	 */
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
