@@ -215,22 +215,7 @@ public class StringUtils {
 		char[] rmChars = rmStr.toCharArray();
 		
 		for (int i=0;i<chars.length;i++) {
-			boolean match = true;
-			
-			if (chars[i] != rmChars[0]) {
-				match = false;
-			}
-			else if (chars.length - i < rmChars.length) {
-				match = false;
-			}
-			else {
-				for (int j=0;j<rmChars.length;j++) {
-					if (rmChars[j] != chars[i+j]) {
-						match = false;
-						break;
-					}
-				}
-			}
+			boolean match = StringUtils00.isMatch(chars, rmChars, i);
 			
 			if (match) {
 				i += rmChars.length - 1;
