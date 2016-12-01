@@ -109,6 +109,7 @@ public class StringUtils02 {
 	 * 예2: substringBetween("<div>hello</div>", null, "</div>") -> null
 	 * 예3: substringBetween("<div>hello</div>", "<div>", null) -> null
 	 * 예4: substringBetween("chars[304]", "[", "]") -> "304"
+	 * 예5: substringBetween("chars[304]", "[", "}") -> null
 	 * 
 	 * @param str
 	 * @param open
@@ -116,11 +117,28 @@ public class StringUtils02 {
 	 * @return
 	 */
 	static String substringBetween(String str, String open, String close) {
+		if (str == null || open == null || close == null) {
+			return null;
+		}
+		
+		return substringBefore(substringAfter(str, open), close);
+	}
+	
+	/**
+	 * 입력받은 문자열에서 구분자로 받은 문자열로 둘러싸인 문자열을 반환합니다.
+	 * 
+	 * 예1: substringBetween("#hello#", "#") -> "hello"
+	 * 예2: substringBetween("char ch = 'z';", "'") -> "z"
+	 * 예3: substringBetween("char ch = 'z';", null) -> null
+	 * 
+	 * @param str
+	 * @param tag
+	 * @return
+	 */
+	static String substringBetween(String str, String tag) {
 		
 		return null;
 	}
-	
-	
 	
 	
 	
