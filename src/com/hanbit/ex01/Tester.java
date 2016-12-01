@@ -35,6 +35,7 @@ public class Tester {
 		System.out.println((System.nanoTime() - time) + "ns");
 		
 		System.out.println("after:" + StringUtils02.substringAfter("banana", "banan"));
+		System.out.println("before:" + StringUtils02.substringBefore("banana", "B"));
 	}
 	
 }

@@ -82,7 +82,7 @@ public class StringUtils02 {
 	/**
 	 * 입력받은 문자열에서 구분자로 받은 문자열 앞의 문자열을 반환합니다.
 	 * 
-	 * 예1: substringBefore("hello world", "wolrd") -> "hello "
+	 * 예1: substringBefore("hello world", "world") -> "hello "
 	 * 예2: substringBefore("banana", "na") -> "ba"
 	 * 예3: substringBefore("banana", "B") -> ""
 	 * 예4: substringBefore("banana", null) -> ""
@@ -93,10 +93,32 @@ public class StringUtils02 {
 	 */
 	static String substringBefore(String str, String separator) {
 		
-		return null;
+		int endIndex = StringUtils00.indexOf(str, separator);
+		
+		if (endIndex < 0) {
+			return "";
+		}
+		
+		return substring(str, 0, endIndex);
 	}
 	
-	
+	/**
+	 * 입력받은 문자열에서 구분자로 받은 각 문자열 사이의 문자열을 반환합니다.
+	 * 
+	 * 예1: substringBetween("<div>hello</div>", "<div>", "</div>") -> "hello"
+	 * 예2: substringBetween("<div>hello</div>", null, "</div>") -> null
+	 * 예3: substringBetween("<div>hello</div>", "<div>", null) -> null
+	 * 예4: substringBetween("chars[304]", "[", "]") -> "304"
+	 * 
+	 * @param str
+	 * @param open
+	 * @param close
+	 * @return
+	 */
+	static String substringBetween(String str, String open, String close) {
+		
+		return null;
+	}
 	
 	
 	
