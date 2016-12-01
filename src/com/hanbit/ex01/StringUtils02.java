@@ -137,7 +137,7 @@ public class StringUtils02 {
 	 */
 	static String substringBetween(String str, String tag) {
 		
-		return null;
+		return substringBetween(str, tag, tag);
 	}
 	
 	
