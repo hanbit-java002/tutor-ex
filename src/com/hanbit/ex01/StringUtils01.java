@@ -16,6 +16,31 @@ public class StringUtils01 {
 		return leftTrim(rightTrim(str));
 	}
 	
+	static String trimFast(final String str) {
+		if (str == null) {
+			return null;
+		}
+		
+		char[] chars = str.toCharArray();
+		String result = "";
+		String midWhitespaces = "";
+		
+		for (int i=0;i<chars.length;i++) {
+			if (StringUtils.isWhitespace(chars[i])) {
+				if (result.length() > 0) {
+					midWhitespaces += chars[i];
+				}
+				
+				continue;
+			}
+			
+			result += midWhitespaces + chars[i];
+			midWhitespaces = "";
+		}
+		
+		return result;
+	}
+	
 	static String rightTrim(final String str) {
 		if (str == null) {
 			return null;
