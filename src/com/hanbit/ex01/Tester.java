@@ -33,6 +33,8 @@ public class Tester {
 		time = System.nanoTime();
 		System.out.println(StringUtils01.repeat(4, '0'));
 		System.out.println((System.nanoTime() - time) + "ns");
+		
+		System.out.println("after:" + StringUtils02.substringAfter("banana", "banan"));
 	}
 	
 }

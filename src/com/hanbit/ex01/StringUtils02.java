@@ -66,11 +66,35 @@ public class StringUtils02 {
 	 * @return
 	 */
 	static String substringAfter(String str, String separator) {
+		if (str == null) {
+			return null;
+		}
+		
+		int beginIndex = StringUtils00.indexOf(str, separator);
+		
+		if (beginIndex < 0) {
+			return "";
+		}
+		
+		return substring(str, beginIndex + separator.length());
+	}
+	
+	/**
+	 * 입력받은 문자열에서 구분자로 받은 문자열 앞의 문자열을 반환합니다.
+	 * 
+	 * 예1: substringBefore("hello world", "wolrd") -> "hello "
+	 * 예2: substringBefore("banana", "na") -> "ba"
+	 * 예3: substringBefore("banana", "B") -> ""
+	 * 예4: substringBefore("banana", null) -> ""
+	 * 
+	 * @param str
+	 * @param separator 구분자
+	 * @return
+	 */
+	static String substringBefore(String str, String separator) {
 		
 		return null;
 	}
-	
-	
 	
 	
 	
