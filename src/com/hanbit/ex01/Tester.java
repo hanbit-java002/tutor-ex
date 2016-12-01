@@ -23,6 +23,14 @@ public class Tester {
 		time = System.nanoTime();
 		System.out.println(StringUtils01.leftPad("11", 4, '0'));
 		System.out.println((System.nanoTime() - time) + "ns");
+		
+		time = System.nanoTime();
+		System.out.println(StringUtils01.rightPad("11", 4, '0'));
+		System.out.println((System.nanoTime() - time) + "ns");
+
+		time = System.nanoTime();
+		System.out.println(StringUtils01.repeat(4, '0'));
+		System.out.println((System.nanoTime() - time) + "ns");
 	}
 	
 }

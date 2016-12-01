@@ -1,5 +1,9 @@
 package com.hanbit.ex01;
 
+/**
+ * @author 한빛
+ *
+ */
 public class StringUtils01 {
 
 	/*
@@ -116,13 +120,7 @@ public class StringUtils01 {
 			return str;
 		}
 		
-		String result = "";
-		
-		for (int i=0;i<size-str.length();i++) {
-			result = ch + result;
-		}
-		
-		return result + str;
+		return repeat(size-str.length(), ch) + str;
 	}
 	
 	/*
@@ -136,8 +134,31 @@ public class StringUtils01 {
 	 * 예1: rightPad("11", 4, '0') -> "1100"
 	 * 예2: rightPad("abcd", 3 '_') -> "abcd" 
 	 */
+	static String rightPad(String str, int size, char ch) {
+		if (str == null || str.length() >= size) {
+			return str;
+		}
+		
+		return str + repeat(size-str.length(), ch);
+	}
 	
-	
+	/**
+	 * 길이와 문자를 입력받아 길이만큼 문자를 반복한 문자열을 반환합니다.
+	 * 
+	 * @param size 반복할 길이
+	 * @param ch 반복할 문자
+	 * @return 문자를 길이만큼 반복한 문자열
+	 * @deprecated 그냥 쓰지마
+	 */
+	static String repeat(int size, char ch) {
+		String result = "";
+		
+		for (int i=0;i<size;i++) {
+			result += ch;
+		}
+		
+		return result;
+	}
 	
 	
 	
