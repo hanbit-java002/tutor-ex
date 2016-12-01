@@ -6,6 +6,7 @@ public class Tester {
 		
 		System.out.println("[" + StringUtils01.trim("   a  b  c   ") + "]");
 		System.out.println("[" + StringUtils01.leftTrim("   a  b  c   ") + "]");
+		System.out.println("[" + StringUtils01.rightTrim("   a  b  c   ") + "]");
 		System.out.println("[" + StringUtils01.removeWhitespace("   a  b  c   ") + "]");
 	}
 	
