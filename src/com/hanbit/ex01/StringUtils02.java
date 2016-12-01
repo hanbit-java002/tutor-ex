@@ -50,6 +50,23 @@ public class StringUtils02 {
 	 */
 	static String substring(String str, int beginIndex) {
 		
+		return str == null ? null : substring(str, beginIndex, str.length());
+	}
+	
+	/**
+	 * 입력받은 문자열에서 구분자로 받은 문자열 뒤의 문자열을 반환합니다.
+	 * 
+	 * 예1: substringAfter("hello world", "hello") -> " world"
+	 * 예2: substringAfter("banana", "ba") -> "nana"
+	 * 예3: substringAfter("banana", "B") -> ""
+	 * 예4: substringAfter("banana", null) -> ""
+	 * 
+	 * @param str
+	 * @param separator 구분자
+	 * @return
+	 */
+	static String substringAfter(String str, String separator) {
+		
 		return null;
 	}
 	
