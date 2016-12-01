@@ -19,6 +19,10 @@ public class Tester {
 		System.out.println("[" + StringUtils01.leftTrim("   a  b  c   ") + "]");
 		System.out.println("[" + StringUtils01.rightTrim("   a  b  c   ") + "]");
 		System.out.println("[" + StringUtils01.removeWhitespace("   a  b  c   ") + "]");
+		
+		time = System.nanoTime();
+		System.out.println(StringUtils01.leftPad("11", 4, '0'));
+		System.out.println((System.nanoTime() - time) + "ns");
 	}
 	
 }

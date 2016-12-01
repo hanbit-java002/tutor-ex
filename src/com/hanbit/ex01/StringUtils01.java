@@ -111,8 +111,31 @@ public class StringUtils01 {
 	 * 예1: leftPad("11", 4, '0') -> "0011"
 	 * 예2: leftPad("abcd", 3 '_') -> "abcd" 
 	 */
+	static String leftPad(String str, int size, char ch) {
+		if (str == null || str.length() >= size) {
+			return str;
+		}
+		
+		String result = "";
+		
+		for (int i=0;i<size-str.length();i++) {
+			result = ch + result;
+		}
+		
+		return result + str;
+	}
 	
-	
+	/*
+	 * 함수: rightPad
+	 * 매개변수1: String str
+	 * 매개변수2: int size
+	 * 매개변수3: char ch
+	 * 리턴타입: String
+	 * 설명: 문자열의 길이가 입력받은 사이즈보다 작으면 오른쪽에 입력받은 문자를
+	 *       남은 사이즈만큼 더하여 반환합니다.
+	 * 예1: leftPad("11", 4, '0') -> "1100"
+	 * 예2: leftPad("abcd", 3 '_') -> "abcd" 
+	 */
 	
 	
 	
