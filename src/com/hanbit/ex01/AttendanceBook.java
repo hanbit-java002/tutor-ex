@@ -1,5 +1,7 @@
 package com.hanbit.ex01;
 
+import java.util.Arrays;
+
 public class AttendanceBook {
 
 	public static void main(String[] args) {
@@ -11,13 +13,16 @@ public class AttendanceBook {
 		/*
 		 * 다음처럼 출력하시오.
 		 * 
-		 * 01. 정동건
-		 * 02. 문재승
-		 * 03. 한지훈
+		 * 01. 김지룡
+		 * 02. 김한슬
+		 * 03. 노상민
 		 * ...
-		 * 12. 채성주
+		 * 12. 한지훈
 		 */		
 		System.out.println(createAttendanceBook(students));
+		
+		// 다음 학생이 몇번인지 출력하세요.
+		System.out.println(getNumber("백미리"));
 	}
 
 	static String createAttendanceBook(String students) {
@@ -29,10 +34,14 @@ public class AttendanceBook {
 		
 		String[] studentsArray = StringUtils03.splitNotBlankAndTrim(students, ",");
 		
+		Arrays.sort(studentsArray);
+		
+		int size = String.valueOf(studentsArray.length).length() + 2;
+		
 		for (int i=0;i<studentsArray.length;i++) {
 			String student = studentsArray[i];
 			
-			result += (i+1) + ". " + student + '\n';
+			result += StringUtils01.leftPad((i+1) + ". ", size, '0') + student + '\n';
 		}
 		
 		return result;
