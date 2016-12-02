@@ -53,7 +53,7 @@ public class StringUtils03 {
 	 * @param separator 구분자
 	 * @return
 	 */
-	static String[] splitNotEmpty(String str, String separator) {
+	static String[] splitNotEmpty(String str, char separator) {
 		
 		return null;
 	}
