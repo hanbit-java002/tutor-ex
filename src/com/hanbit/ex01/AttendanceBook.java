@@ -22,7 +22,7 @@ public class AttendanceBook {
 		System.out.println(createAttendanceBook(students));
 		
 		// 다음 학생이 몇번인지 출력하세요.
-		System.out.println(getNumber("백미리"));
+		System.out.println(getStudentNumber("백미리"));
 	}
 
 	static String createAttendanceBook(String students) {
