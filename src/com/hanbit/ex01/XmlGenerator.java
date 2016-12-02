@@ -1,5 +1,7 @@
 package com.hanbit.ex01;
 
+import java.util.Arrays;
+
 public class XmlGenerator {
 
 	public static void main(String[] args) {
@@ -18,7 +20,39 @@ public class XmlGenerator {
 		 *   <student no="12">한지훈</student>
 		 * </students> 
 		 */
-		System.out.println(generateXml(students));
+		System.out.println(generateXml("Steve, Tom"));
 	}
+
+	static String generateXml(String students) {
+		String xml = "<students>";
+		
+		if (!StringUtils.isBlank(students)) {
+			String[] studentsArray = StringUtils03.splitNotBlankAndTrim(students, ",");
+			Arrays.sort(studentsArray);
+			
+			for (int i=0;i<studentsArray.length;i++) {
+				xml += "\n\t<student no=\"" + (i+1) + "\">" + studentsArray[i] + "</student>";
+			}
+		}
+		
+		xml += "\n</students>";
+		
+		return xml;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
