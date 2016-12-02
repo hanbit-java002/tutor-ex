@@ -126,12 +126,72 @@ public class StringUtils03 {
 	 * @return
 	 */
 	static String[] split(String str, String separator) {
+		if (str == null) {
+			return null;
+		}
+		
+		if (!StringUtils00.contains(str, separator)) {
+			return new String[] {str};
+		}
+
+		char[] chars = str.toCharArray();
+		String[] result = new String[StringUtils00.countMatches(str, separator) + 1];
+		
+		int n = 0;
+		result[n] = "";
+		
+		for (int i=0;i<chars.length;i++) {
+			String candidate = "";
+			
+			for (int j=i;j<chars.length && j<i+separator.length();j++) {
+				candidate += chars[j];
+			}
+			
+			if (separator.equals(candidate)) {
+				result[++n] = "";
+				i += separator.length() - 1;
+				continue;
+			}
+			
+			result[n] += chars[i];
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * 입력받은 문자열을 구분자를 기준으로 분리한 문자열의
+	 * 배열을 반환합니다. 단, 빈문자열을 제외합니다.
+	 * 
+	 * 예1: splitNotEmpty("hello, world", ",") -> ["hello", " world"]
+	 * 예2: splitNotEmpty("5,4,3,2,1", ",") -> ["5", "4", "3", "2", "1"]
+	 * 예3: splitNotEmpty("이상윤|조영욱|| ||", "||") -> ["이상윤|조영욱", " "]
+	 * 
+	 * @param str
+	 * @param separator 구분자
+	 * @return
+	 */
+	static String[] splitNotEmpty(String str, String separator) {
 		
 		return null;
 	}
 	
-	
-	
+	/**
+	 * 입력받은 문자열을 구분자를 기준으로 분리한 문자열의
+	 * 배열을 반환합니다. 단, 빈문자열을 제외합니다.
+	 * 
+	 * 예1: splitNotBlank("hello, world", ",") -> ["hello", " world"]
+	 * 예2: splitNotBlank("5,4,3,2,1", ",") -> ["5", "4", "3", "2", "1"]
+	 * 예3: splitNotBlank("이상윤|조영욱|| ||", "||") -> ["이상윤|조영욱"]
+	 * 
+	 * @param str
+	 * @param separator 구분자
+	 * @return
+	 */
+	static String[] splitNotBlank(String str, String separator) {
+		
+		return null;
+	}
 	
 	
 	
