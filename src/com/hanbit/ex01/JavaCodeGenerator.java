@@ -27,8 +27,10 @@ public class JavaCodeGenerator {
 		 * 다음과 같이 출력하시오.
 		 * 
 		 * System.out.println("Hello, World");
+		 * System.out.println(42.43);
 		 */
 		System.out.println(generatePrintln(template, "Hello, World"));
+		System.out.println(generatePrintln(template, "42.43"));
 	}
 
 	static String generateSourceCode(String string, int hour, String... functions) {
@@ -53,7 +55,10 @@ public class JavaCodeGenerator {
 		return code;
 	}
 	
-	
+	static String generatePrintln(String template, String str) {
+		
+		return StringUtils00.replace(template, "[var]", "\"" + str + "\"");
+	}
 	
 	
 	
