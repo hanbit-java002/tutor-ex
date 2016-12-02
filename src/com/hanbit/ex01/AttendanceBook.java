@@ -11,13 +11,49 @@ public class AttendanceBook {
 		/*
 		 * 다음처럼 출력하시오.
 		 * 
-		 * 1. 정동건
-		 * 2. 문재승
-		 * 3. 한지훈
+		 * 01. 정동건
+		 * 02. 문재승
+		 * 03. 한지훈
 		 * ...
 		 * 12. 채성주
 		 */		
-		System.out.println(createAttendaceBook(students));
+		System.out.println(createAttendanceBook(students));
 	}
+
+	static String createAttendanceBook(String students) {
+		if (students == null) {
+			return "";
+		}
+		
+		String result = "";
+		
+		String[] studentsArray = StringUtils03.splitNotBlankAndTrim(students, ",");
+		
+		for (int i=0;i<studentsArray.length;i++) {
+			String student = studentsArray[i];
+			
+			result += (i+1) + ". " + student + '\n';
+		}
+		
+		return result;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
