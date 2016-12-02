@@ -22,7 +22,19 @@ public class AttendanceBook {
 		System.out.println(createAttendanceBook(students));
 		
 		// 다음 학생이 몇번인지 출력하세요.
-		System.out.println(getStudentNumber("백미리"));
+		System.out.println(getStudentNumber(students, "문재승"));
+	}
+
+	static int getStudentNumber(String students, String name) {
+		if (StringUtils.isBlank(students) || StringUtils.isBlank(name)) {
+			return -1;
+		}
+		
+		String[] studentsArray = StringUtils03.splitNotBlankAndTrim(students, ",");
+		
+		Arrays.sort(studentsArray);
+		
+		return Arrays.binarySearch(studentsArray, name) + 1;
 	}
 
 	static String createAttendanceBook(String students) {
