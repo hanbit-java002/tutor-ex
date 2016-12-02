@@ -83,15 +83,34 @@ public class StringUtils03 {
 	 * 
 	 * 예1: splitNotBlank("hello, world", ',') -> ["hello", " world"]
 	 * 예2: splitNotBlank("5,4,3,2,1", ',') -> ["5", "4", "3", "2", "1"]
-	 * 예3: splitNotBlank("이상윤|조영욱|  | |", '|') -> ["이상윤", "조영욱"]
+	 * 예3: splitNotBlank("이상윤|조영욱|  |\t\r\n|", '|') -> ["이상윤", "조영욱"]
 	 * 
 	 * @param str
 	 * @param separator
 	 * @return
 	 */
 	static String[] splitNotBlank(String str, char separator) {
+		int count = 0;
 		
-		return null;
+		String[] split = split(str, separator);
+		
+		for (int i=0;i<split.length;i++) {
+			if (!StringUtils.isBlank(split[i])) {
+				count++;
+			}
+		}
+		
+		String[] result = new String[count];
+		
+		for (int i=0, n=0;i<split.length;i++) {
+			if (StringUtils.isBlank(split[i])) {
+				continue;
+			}
+			
+			result[n++] = split[i];
+		}		
+		
+		return result;
 	}
 	
 	
