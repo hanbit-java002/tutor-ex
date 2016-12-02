@@ -13,9 +13,23 @@ public class JavaCodeGenerator {
 		 * 			System.out.println("Hello, Java");
 		 *		}
 		 *
+		 *		static void print() {
+		 *		
+		 *		}
+		 *
 		 * }
 		 */
-		System.out.println(generateSourceCode("Hello, Java"));
+		System.out.println(generateSourceCode("Hello, Java", new String[] {"print"}));
+	}
+
+	static String generateSourceCode(String string) {
+		String code = "public class JavaCodeGenerator {\n\n";
+		code += "\tpublic static void main(String[] args) {\n";
+		code += "\t\tSystem.out.println(\"" + string + "\");\n";
+		code += "\t}\n\n";
+		code += "}";
+		
+		return code;
 	}
 	
 }
