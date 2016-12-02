@@ -7,7 +7,7 @@ public class Tester {
 		long time = System.nanoTime();
 		printArray(StringUtils03.split("|||이 상 윤|조영욱|  ||", '|'));
 		System.out.println("----------------");
-		printArray(StringUtils03.split("이상윤||조영욱||||", "||"));
+		printArray(StringUtils03.splitNotBlankAndTrim("hello, world", ","));
 		System.out.println("----------------");
 		System.out.println((System.nanoTime() - time) + "ns");
 	}
