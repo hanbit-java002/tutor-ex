@@ -21,7 +21,7 @@ public class JavaCodeGenerator {
 		 */
 		//System.out.println(generateSourceCode("Hello, Java", 5, "takeRest"));
 		
-		String template = "System.out.println([var]);";
+		String template = "// [var]를 출력하는 코드입니다.\nSystem.out.println([var]);";
 		
 		/*
 		 * 다음과 같이 출력하시오.
@@ -31,6 +31,7 @@ public class JavaCodeGenerator {
 		 */
 		System.out.println(generatePrintln(template, "Hello, World"));
 		System.out.println(generatePrintln(template, "42.43"));
+		System.out.println(generatePrintln(template, "4번째"));
 	}
 
 	static String generateSourceCode(String string, int hour, String... functions) {
@@ -57,7 +58,16 @@ public class JavaCodeGenerator {
 	
 	static String generatePrintln(String template, String str) {
 		
-		return StringUtils00.replace(template, "[var]", "\"" + str + "\"");
+		String replaceStr = "";
+		
+		if (NumberUtils.isNumber(str)) {
+			replaceStr = str;
+		}
+		else {
+			replaceStr = "\"" + str + "\"";
+		}
+		
+		return StringUtils00.replace(template, "[var]", replaceStr);
 	}
 	
 	
